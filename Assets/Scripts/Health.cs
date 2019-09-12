@@ -5,23 +5,16 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int _healtpoint;
-    public GameObject ChestPrefab;
-    public int Healtpoint { get => _healtpoint; set => _healtpoint = value; }
-    public void TakeDamage(int _damage)
-    {
-        Healtpoint -= _damage;
-        if (Healtpoint<=0)
-        {
-           
-            Die();
-        }
-    }
+    public HealthDisplay healthDisplay;
+    HealthSystem system;
 
-    private void Die()
+    void Start()
     {
-       
-        Instantiate(ChestPrefab,transform.position,Quaternion.identity);
-        Destroy(gameObject);
+        system = new HealthSystem(75);
+        healthDisplay.Setup(system);
+    }
+    public void TakeDamage(int amount)
+    {
+        system.TakeDamage(amount);
     }
 }

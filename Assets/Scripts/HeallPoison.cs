@@ -9,8 +9,12 @@ public class HealPoison : Item
     public override void Use(int IndexSlot)
     {
         base.Use(IndexSlot);
-        HealthDisplay.instance.Heal(numberOfHeal);
-        Inventory.instance.RemoveItem(IndexSlot);
-        Inventory.instance.slots[IndexSlot].ClearSlot();
+        if (Controller.instance.system.GetPercent() !=1)
+        {
+            Controller.instance.system.Heal(numberOfHeal);
+            Inventory.instance.RemoveItem(IndexSlot);
+            Inventory.instance.slots[IndexSlot].ClearSlot();
+        }
+        
     }
 }

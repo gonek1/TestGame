@@ -11,7 +11,7 @@ public class HeallPoison : Item
     {
         
         Debug.Log("ez");
-        HealthDisplay.instance.Heal(numberOfHeal);
+        //HealthDisplay.instance.Heal(numberOfHeal);
     }
     void Start()
     {

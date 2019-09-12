@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthRegen : MonoBehaviour
 {
-    float amount =1;
+    int amount =1;
     
  
    void OnEnable()
@@ -19,8 +19,8 @@ public class HealthRegen : MonoBehaviour
     {
         while (this.gameObject.activeSelf)
         {
-           // Debug.Log("123");
-            this.gameObject.GetComponent<HealthDisplay>().Heal((int)amount);
+
+            this.gameObject.GetComponent<Controller>().system.Heal(amount);
             yield return new WaitForSeconds(1f);
         }
     }
