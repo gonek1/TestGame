@@ -18,6 +18,7 @@ public class HealthDisplay : MonoBehaviour
     public bool _IsFlashble = false;
     [SerializeField] Image health;
     [SerializeField] Image mana;
+    [SerializeField] Image stamina;
     int x;
     void Start()
     {
@@ -30,6 +31,12 @@ public class HealthDisplay : MonoBehaviour
         HealthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
         HealthSystem.OnManaChanged += HealthSystem_OnManaChanged;
         HealthSystem.HealthDownToZero += HealthSystem_HealthDownToZero;
+        HealthSystem.OnStaminaChanged += HealthSystem_OnStaminaChanged;
+    }
+
+    private void HealthSystem_OnStaminaChanged(object sender, System.EventArgs e)
+    {
+        stamina.fillAmount = HealthSystem.GetPercentStamina();
     }
 
     private void HealthSystem_HealthDownToZero(object sender, System.EventArgs e)

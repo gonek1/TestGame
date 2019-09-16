@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 public class ExpSystem : MonoBehaviour
 {
+    public event EventHandler OnLvlUp;
     [SerializeField] Text LvlText;
     [SerializeField] Image icon;
     public int currentlvl = 0;
@@ -29,6 +31,7 @@ public class ExpSystem : MonoBehaviour
             {
                 currentExp -= lvlexpneed[currentlvl];
                 LvlUp(1);
+                OnLvlUp(this, EventArgs.Empty);
             }
         }
         

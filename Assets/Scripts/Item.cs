@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Inventory/Item")]
 public class Item : ScriptableObject
 {
-    
+    public TypeOfAction type = TypeOfAction.PickUp;
     public string Name;
     [Multiline(10)]
     public string Description="";

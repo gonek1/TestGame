@@ -65,6 +65,7 @@ public class SimpleEnemy : MonoBehaviour
         }
         else if (!hitLeft)
         {
+            offset = new Vector2(0, -1);
             isFoundedPlayer = false;
             target = originPos;
         }
