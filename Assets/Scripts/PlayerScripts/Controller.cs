@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 
 public class Controller : MonoBehaviour
 {
+   
+    [SerializeField] bool canOpenInv = true;
+    [SerializeField] bool canMove = true;
     [SerializeField] float TimeBegoreRegenStamina = 3f;
     [SerializeField] int NeedStaminaToAttack = 25;
     public static Controller instance;
@@ -23,7 +26,7 @@ public class Controller : MonoBehaviour
     [SerializeField] float _speed = 40f;
     [SerializeField] float _damage;
     bool isOpen = false;
-
+    public bool canUseOther { get; set; }
     public float Damage { get => _damage; set => _damage = value; }
     public float Speed { get => _speed; set => _speed = value; }
     public HealthSystem system;
@@ -32,8 +35,8 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
-        
 
+        canUseOther = true;
         StartCoroutine(RegenStamina());
         expSystem = GetComponent<ExpSystem>();
         system =new HealthSystem(150, 50,100);
@@ -73,50 +76,51 @@ public class Controller : MonoBehaviour
   
     void Update()
     {
-        TimeBegoreRegenStamina -= Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
+        
+            TimeBegoreRegenStamina -= Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.Tab)&& canOpenInv)
+            {
             isOpen = !isOpen;
-            if (isOpen)
-            {
-                Invenotory.SetActive(true);
-                stats.SetActive(false);
-                foreach (var item in InventoryUI)
+                if (isOpen)
                 {
-                    item.SetActive(true);
+                    canUseOther = false;
+                    Invenotory.SetActive(true);
+                    stats.SetActive(false);
+                    foreach (var item in InventoryUI)
+                    {
+                        item.SetActive(true);
+                    }
+                SetMove(false);
                 }
-            }
-            else if (!isOpen)
-            {
+                else if (!isOpen)
+                {
+                canUseOther = true;
                 Invenotory.SetActive(false);
-                stats.SetActive(false);
-            } 
-        }
-        if (Invenotory.activeSelf)
-        {
-            return;
-        }
+                    stats.SetActive(false);
+                SetMove(true);
+            }
+            }
             animator.SetFloat("speed", Mathf.Abs(HorInp));
             HorInp = Input.GetAxisRaw("Horizontal") * Speed * Time.fixedDeltaTime;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space)&&canMove)
             {
                 animator.SetTrigger("jump");
                 jump = true;
             }
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && canMove)
             {
-             if (system.GetStamina()> NeedStaminaToAttack)
-             {
-                animator.SetTrigger("attack");
-                TimeBegoreRegenStamina = 3f;
-             }
-            else
-            {
-                Debug.Log("Нет сил для атаки");
+                if (system.GetStamina() > NeedStaminaToAttack)
+                {
+                    animator.SetTrigger("attack");
+                    TimeBegoreRegenStamina = 3f;
+                }
+                else
+                {
+                    Debug.Log("Нет сил для атаки");
+                }
+
             }
-                
-            }
-       
+        
 
 
     }
@@ -128,6 +132,26 @@ public class Controller : MonoBehaviour
         
     }
     
+    public void Rest()
+    {
+        system.FullHeal();
+    }
+    public void SetMove(bool move)
+    {
+        canMove = move;
+        if (canMove)
+        {
+            Speed = 40f;
+        }
+        else
+        {
+            Speed = 0;
+        }
+    }
+    public void SetOpenInv(bool inv)
+    {
+        canOpenInv = inv;
+    }
     
     
 

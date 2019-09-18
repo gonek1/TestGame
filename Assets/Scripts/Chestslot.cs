@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 
 public class Chestslot : InventorySlot
 {
+    [SerializeField] Text ChestName;
     public override void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right)
@@ -20,5 +23,10 @@ public class Chestslot : InventorySlot
             }           
         }
        
+    }
+    public override void AddItem(Item _item)
+    {
+        base.AddItem(_item);
+        ChestName.text = _item.Name;
     }
 }

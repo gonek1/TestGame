@@ -20,7 +20,7 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
    protected Item item;
     public Image icon;
     
-    public void AddItem(Item _item)
+    public virtual void AddItem(Item _item)
     {
         item = _item;
         icon.enabled = true;

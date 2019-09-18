@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Chest : MonoBehaviour
 {
-
+    Controller controller;
     public RectTransform Chestinventory;
     public List<Item> Items;
     [SerializeField] bool isNear;
@@ -18,15 +18,18 @@ public class Chest : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
+            controller = col.gameObject.GetComponent<Controller>();
+            
             isNear = true;
     }
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
             isNear = false;
-            
+            controller.SetMove(true);
+            controller.SetOpenInv(true);
             chestManager.UnRender();
-        CloseChest();
+            CloseChest();
     }
     void Update()
     {
@@ -35,9 +38,17 @@ public class Chest : MonoBehaviour
             
             if (!Chestinventory.gameObject.activeSelf)
             {
-                //Debug.Log("Open");
+                controller.SetMove(false);
+                controller.SetOpenInv(false);
                 OpenChest();
                 chestManager.Render(Items,this);
+            }
+            else
+            {
+                CloseChest();
+                chestManager.UnRender();
+                controller.SetMove(true);
+                controller.SetOpenInv(true);
             }
         }
     }

@@ -34,7 +34,7 @@ public class ChestManager : MonoBehaviour
         for (int i = 0; i < _items.Count; i++)
         {
             var Cell =  Instantiate(CellPrebaf, content.transform);
-            Cell.GetComponent<InventorySlot>().AddItem(_items[i]);
+            Cell.GetComponent<Chestslot>().AddItem(_items[i]);
         }
 
     }
