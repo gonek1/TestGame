@@ -21,6 +21,8 @@ public class TalantManager : MonoBehaviour
     [SerializeField] Transform parentOfInventorySlot;
     [SerializeField] Transform _Player;
     [SerializeField] TalantSlot Talslot;
+    [SerializeField] Transform content;
+    [SerializeField] GameObject TalantPrefabSlot;
     Inventory inventory;
 
     public Transform Player { get => _Player; set => _Player = value; }
@@ -47,4 +49,10 @@ public class TalantManager : MonoBehaviour
     {
         inventory.AddItem(talant);
     }
-}
+    public void Render(Talant talant)
+    {
+        var cell = Instantiate(TalantPrefabSlot, content);
+            cell.GetComponent<Image>().sprite = talant.Icon;
+    }
+
+} 

@@ -11,10 +11,8 @@ public class Talant : Item
     }
     public override void Use(int IndexSlot)
     {
-       // Debug.Log("Hello");
-
         TalantManager.instance.QuipTalant(this, IndexSlot);
         TalantManager.instance.Player.gameObject.AddComponent<HealthRegen>();
-
+        TalantManager.instance.Render(this);
     }
 }
