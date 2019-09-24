@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Controller : MonoBehaviour
 {
-   
+    [SerializeField] bool isOnLadder;
     [SerializeField] bool canOpenInv = true;
     [SerializeField] bool canMove = true;
     [SerializeField] float TimeBegoreRegenStamina = 3f;
@@ -25,12 +25,14 @@ public class Controller : MonoBehaviour
     [Header("Характеристики перса")]
     [SerializeField] float _speed = 40f;
     [SerializeField] float _damage;
+    [SerializeField] float _speddOnLadder;
     bool isOpen = false;
     public bool canUseOther { get; set; }
     public float Damage { get => _damage; set => _damage = value; }
     public float Speed { get => _speed; set => _speed = value; }
+    public bool IsOnLadder { get => isOnLadder; set => isOnLadder = value; }
+
     public HealthSystem system;
-    
     ExpSystem expSystem;
 
     void Start()
@@ -39,7 +41,7 @@ public class Controller : MonoBehaviour
         canUseOther = true;
         StartCoroutine(RegenStamina());
         expSystem = GetComponent<ExpSystem>();
-        system =new HealthSystem(150, 50,100);
+        system =new HealthSystem(150, 50,100,150);
         
         healthDisplay.Setup(system);
         animator = GetComponent<Animator>();
@@ -77,7 +79,7 @@ public class Controller : MonoBehaviour
     void Update()
     {
         
-            TimeBegoreRegenStamina -= Time.deltaTime;
+            TimeBegoreRegenStamina =Mathf.Clamp(TimeBegoreRegenStamina- Time.deltaTime,0,TimeBegoreRegenStamina);
             if (Input.GetKeyDown(KeyCode.Tab)&& canOpenInv)
             {
             isOpen = !isOpen;
@@ -102,7 +104,7 @@ public class Controller : MonoBehaviour
             }
             animator.SetFloat("speed", Mathf.Abs(HorInp));
             HorInp = Input.GetAxisRaw("Horizontal") * Speed * Time.fixedDeltaTime;
-            if (Input.GetKeyDown(KeyCode.Space)&&canMove)
+            if (Input.GetKeyDown(KeyCode.Space)&&canMove && !IsOnLadder)
             {
                 animator.SetTrigger("jump");
                 jump = true;

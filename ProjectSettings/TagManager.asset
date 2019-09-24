@@ -11,6 +11,8 @@ TagManager:
   - Chest
   - Enemy
   - HomeFire
+  - ladder
+  - Dealer
   layers:
   - Default
   - TransparentFX
