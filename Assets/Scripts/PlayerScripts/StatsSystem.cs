@@ -17,6 +17,7 @@ public class StatsSystem : MonoBehaviour
     [SerializeField] Text _AgilityText;
     [SerializeField] Text _IntText;
     [SerializeField] Text _FreeLvlPointsText;
+    [SerializeField] Text _FreeSouls;
      ExpSystem expSystem;
      Controller controller;
     public int _FreeLvlPoints = 0;
@@ -101,10 +102,12 @@ public class StatsSystem : MonoBehaviour
         _MaxManaTex.text = controller.system.GetMaxMana().ToString();
         _FreeLvlPointsText.text = _FreeLvlPoints.ToString();
         _MaxStaminaText.text = controller.system.GetMaxStamina().ToString();
+        _FreeSouls.text = controller.system.Souls.ToString();
     }
     public void Refresh()
     {
         _lvlText.text = expSystem.currentlvl.ToString();
         _FreeLvlPointsText.text = _FreeLvlPoints.ToString();
+        _FreeSouls.text = controller.system.Souls.ToString();
     }
 }

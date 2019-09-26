@@ -39,9 +39,6 @@ public class ExpSystem : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            GainExp(300);
-        }
+        
     }
 }

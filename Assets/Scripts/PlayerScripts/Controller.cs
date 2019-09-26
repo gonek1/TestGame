@@ -9,6 +9,10 @@ public class Controller : MonoBehaviour
     [SerializeField] bool isOnLadder;
     [SerializeField] bool canOpenInv = true;
     [SerializeField] bool canMove = true;
+    public bool CanMove()
+    {
+        return canMove;
+    }
     [SerializeField] float TimeBegoreRegenStamina = 3f;
     [SerializeField] int NeedStaminaToAttack = 25;
     public static Controller instance;

@@ -23,16 +23,13 @@ public class SimpleEnemy : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        originPos = transform.position;
-        
+        originPos = transform.position; 
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
         Findtarget();
         MoveToPlayer();
-      //  CheckForFlip();
-        //Debug.Log(Vector2.Distance(transform.position, target));
     }
     void Findtarget()
     {

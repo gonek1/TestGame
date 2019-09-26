@@ -23,13 +23,13 @@ public class Ladder : MonoBehaviour
         {
             col.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
 
-            if (col.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.W))
+            if (col.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.W)&&Controller.instance.CanMove())
             {
 
                 col.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speedOnLadder);
 
             }
-            else if (col.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.S))
+            else if (col.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.S) && Controller.instance.CanMove())
             {
                 col.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -speedOnLadder);
             }

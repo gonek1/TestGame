@@ -6,12 +6,12 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public HealthDisplay healthDisplay;
-    HealthSystem system;
+    EnemyHealthsystem system;
 
     void Start()
     {
-        system = new HealthSystem(75);
-        healthDisplay.Setup(system);
+        system = new EnemyHealthsystem(100);
+        healthDisplay.SetupForEnemy(system);
     }
     public void TakeDamage(int amount)
     {

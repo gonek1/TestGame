@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class HealthDisplay : MonoBehaviour
 {
     private HealthSystem HealthSystem;
+    private EnemyHealthsystem _EnemyHealthsystem;
     #region Singleton
     public static HealthDisplay instance;
     void Awake()
@@ -34,20 +35,41 @@ public class HealthDisplay : MonoBehaviour
         HealthSystem.OnStaminaChanged += HealthSystem_OnStaminaChanged;
     }
 
+    private void HealthSystem_HealthDownToZero(object sender, System.EventArgs e)
+    {
+        Destroy(gameObject);
+    }
+
+    public void SetupForEnemy(EnemyHealthsystem enemy)
+    {
+        this._EnemyHealthsystem = enemy;
+        _EnemyHealthsystem.EnemyHealthDownToZero += EnemyHealthSystem_HealthDownToZero;
+        _EnemyHealthsystem.OnHealthChanged += _EnemyHealthsystem_OnHealthChanged;
+    }
+
+    private void _EnemyHealthsystem_OnHealthChanged(object sender, System.EventArgs e)
+    {
+        health.fillAmount = _EnemyHealthsystem.GetPercent();
+    }
+
     private void HealthSystem_OnStaminaChanged(object sender, System.EventArgs e)
     {
         stamina.fillAmount = HealthSystem.GetPercentStamina();
     }
 
-    private void HealthSystem_HealthDownToZero(object sender, System.EventArgs e)
+    private void EnemyHealthSystem_HealthDownToZero(object sender, System.EventArgs e)
     {
         Destroy(gameObject);
-        Collider2D[] enemys = Physics2D.OverlapCircleAll(transform.position, 15);
-        foreach (var enemy in enemys)
+        Collider2D[] searchPlayer = Physics2D.OverlapCircleAll(transform.position, 15);
+        foreach (var gameobject in searchPlayer)
         {
 
-            if (enemy.gameObject.CompareTag("Player"))
-                enemy.GetComponent<ExpSystem>().GainExp(500);
+            if (gameobject.gameObject.CompareTag("Player"))
+            {
+                gameobject.GetComponent<ExpSystem>().GainExp(500);
+                gameobject.GetComponent<Controller>().system.PlusSouls(200);
+                break;
+            }
         }
     }
 
@@ -62,9 +84,6 @@ public class HealthDisplay : MonoBehaviour
         health.fillAmount = HealthSystem.GetPercent();
        
     }
-
-    
-
     IEnumerator Blink()
     {
         while (_IsFlashble)
