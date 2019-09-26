@@ -32,7 +32,9 @@ public class QuipSlot : MonoBehaviour, IPointerClickHandler
 
         if (eventData.button == PointerEventData.InputButton.Right)
         {
+            Controller.instance.equpimentXar.UnSetItem(_quipment);
             ClearSlot();
+            
         }
     }
     public void ClearSlot()

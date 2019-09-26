@@ -12351,7 +12351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1211526165
 Transform:
   m_ObjectHideFlags: 0
@@ -20787,6 +20787,8 @@ MonoBehaviour:
   isOnLadder: 0
   canOpenInv: 1
   canMove: 1
+  damage: 0
+  armor: 0
   TimeBegoreRegenStamina: 3
   NeedStaminaToAttack: 20
   healthDisplay: {fileID: 1919035717}
@@ -21111,7 +21113,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Item
       value: 
-      objectReference: {fileID: 11400000, guid: a57b4b4292ad8b5438201a81726b6a16,
+      objectReference: {fileID: 11400000, guid: 6b095b5d21707104f93c948b2ff0f6d5,
         type: 2}
     - target: {fileID: 6781898377035469481, guid: f51a3476eb539944e93df3d88c026160,
         type: 3}

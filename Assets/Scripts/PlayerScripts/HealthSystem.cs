@@ -91,7 +91,7 @@ public class HealthSystem
     }
     public void TakeDamage(int amount)
     {
-        health = Mathf.Clamp(health - amount, 0, healthMax);
+        health = Mathf.Clamp(health - (amount -  (amount*Controller.instance.equpimentXar.basicArmor*2)/100), 0, healthMax);
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
         if (health <=0 )
         {

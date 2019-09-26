@@ -18,6 +18,8 @@ public class Quipment : Item
     {
         
         QuipMentManager.instance.QuipItem(this, IndexSlot);
+        Controller.instance.equpimentXar.SetItem(this);
+
     }
 }
 public enum QuipmentSlot{

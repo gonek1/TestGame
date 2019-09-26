@@ -13,6 +13,8 @@ public class Controller : MonoBehaviour
     {
         return canMove;
     }
+    [SerializeField] int damage;
+    [SerializeField] int armor;
     [SerializeField] float TimeBegoreRegenStamina = 3f;
     [SerializeField] int NeedStaminaToAttack = 25;
     public static Controller instance;
@@ -32,16 +34,16 @@ public class Controller : MonoBehaviour
     [SerializeField] float _speddOnLadder;
     bool isOpen = false;
     public bool canUseOther { get; set; }
-    public float Damage { get => _damage; set => _damage = value; }
+    
     public float Speed { get => _speed; set => _speed = value; }
     public bool IsOnLadder { get => isOnLadder; set => isOnLadder = value; }
 
     public HealthSystem system;
     ExpSystem expSystem;
-
+    public PlayerEqupimentXar equpimentXar;
     void Start()
     {
-
+        equpimentXar = new PlayerEqupimentXar(40, 1);
         canUseOther = true;
         StartCoroutine(RegenStamina());
         expSystem = GetComponent<ExpSystem>();
@@ -61,7 +63,7 @@ public class Controller : MonoBehaviour
         {
 
             if (enemy.gameObject.tag =="Enemy")
-            enemy.GetComponent<Health>().TakeDamage((int)Damage);
+            enemy.GetComponent<Health>().TakeDamage((int)equpimentXar.basicDamage);
         }
         system.minusStamina(NeedStaminaToAttack);        
     }
@@ -82,7 +84,8 @@ public class Controller : MonoBehaviour
   
     void Update()
     {
-        
+        damage = equpimentXar.basicDamage;
+        armor = equpimentXar.basicArmor;
             TimeBegoreRegenStamina =Mathf.Clamp(TimeBegoreRegenStamina- Time.deltaTime,0,TimeBegoreRegenStamina);
             if (Input.GetKeyDown(KeyCode.Tab)&& canOpenInv)
             {
