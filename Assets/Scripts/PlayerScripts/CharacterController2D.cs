@@ -13,7 +13,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-	private bool m_Grounded;            // Whether or not the player is grounded.
+	[SerializeField] private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	public bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -43,21 +43,14 @@ public class CharacterController2D : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
-
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders[i].gameObject != gameObject)
-			{
-				m_Grounded = true;
-				if (!wasGrounded)
-					OnLandEvent.Invoke();
-			}
-		}
+        RaycastHit2D hitGround = Physics2D.Raycast(m_GroundCheck.position, Vector2.down, k_GroundedRadius, m_WhatIsGround);
+        if (hitGround.collider != null && hitGround.transform.gameObject.tag == "Ground")
+        {
+                m_Grounded = true;
+                OnLandEvent?.Invoke();
+        }
+        
 	}
 
 

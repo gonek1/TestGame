@@ -13,11 +13,11 @@ public class SimpleEnemy : MonoBehaviour
     [SerializeField] LayerMask maskforground;
     [SerializeField] Transform groundCheck;
     [SerializeField] Vector2 offset;
-    Vector2 target;
-    Rigidbody2D rb;
-    Vector2 originPos;
+    private Vector2 target;
+    private Rigidbody2D rb;
+    private Vector2 originPos;
     private bool m_FacingLeft;
-    Animator animator;
+    private Animator animator;
     [SerializeField] Transform attackPlace;
 
     void Start()

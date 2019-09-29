@@ -20,14 +20,8 @@ public class HealthDisplay : MonoBehaviour
     [SerializeField] Image health;
     [SerializeField] Image mana;
     [SerializeField] Image stamina;
-    int x;
-    void Start()
-    {
-        
-    }
     public void Setup(HealthSystem healthSystem)
     {
-        
         this.HealthSystem = healthSystem;
         HealthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
         HealthSystem.OnManaChanged += HealthSystem_OnManaChanged;

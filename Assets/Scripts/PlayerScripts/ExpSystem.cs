@@ -37,8 +37,4 @@ public class ExpSystem : MonoBehaviour
         
         icon.fillAmount = (float)currentExp / lvlexpneed[currentlvl];
     }
-    void Update()
-    {
-        
-    }
 }

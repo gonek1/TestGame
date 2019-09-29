@@ -19,22 +19,23 @@ public class Controller : MonoBehaviour
     [SerializeField] int NeedStaminaToAttack = 25;
     public static Controller instance;
     public HealthDisplay healthDisplay;
-    [Range(0,2)]public float Radius;
-    public Transform attackPlace;
-    public GameObject stats;
-    public GameObject Invenotory;
-    public GameObject[] InventoryUI;
-    public Animator animator;
-    public CharacterController2D controller2D;
-    float HorInp;
-    bool jump = false;
+    [Range(0, 2)] public float Radius;
+    [SerializeField] Transform attackPlace;
+    [SerializeField] GameObject stats;
+    [SerializeField] GameObject Invenotory;
+    [SerializeField] GameObject[] InventoryUI;
+    [SerializeField] Animator animator;
+    [SerializeField] CharacterController2D controller2D;
+    private float HorInp;
+    private bool jump = false;
     [Header("Характеристики перса")]
     [SerializeField] float _speed = 40f;
     [SerializeField] float _damage;
     [SerializeField] float _speddOnLadder;
     bool isOpen = false;
+    [SerializeField] Rigidbody2D rb;
     public bool canUseOther { get; set; }
-    
+
     public float Speed { get => _speed; set => _speed = value; }
     public bool IsOnLadder { get => isOnLadder; set => isOnLadder = value; }
 
@@ -43,12 +44,13 @@ public class Controller : MonoBehaviour
     public PlayerEqupimentXar equpimentXar;
     void Start()
     {
+       
         equpimentXar = new PlayerEqupimentXar(40, 1);
         canUseOther = true;
         StartCoroutine(RegenStamina());
         expSystem = GetComponent<ExpSystem>();
-        system =new HealthSystem(150, 50,100,150);
-        
+        system = new HealthSystem(150, 50, 100, 150);
+        controller2D = GetComponent<CharacterController2D>();
         healthDisplay.Setup(system);
         animator = GetComponent<Animator>();
     }
@@ -62,10 +64,10 @@ public class Controller : MonoBehaviour
         foreach (var enemy in enemys)
         {
 
-            if (enemy.gameObject.tag =="Enemy")
-            enemy.GetComponent<Health>().TakeDamage((int)equpimentXar.basicDamage);
+            if (enemy.gameObject.tag == "Enemy")
+                enemy.GetComponent<Health>().TakeDamage((int)equpimentXar.basicDamage);
         }
-        system.minusStamina(NeedStaminaToAttack);        
+        system.minusStamina(NeedStaminaToAttack);
     }
     IEnumerator RegenStamina()
     {
@@ -73,63 +75,64 @@ public class Controller : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.5f);
-            if (TimeBegoreRegenStamina<=0)
+            if (TimeBegoreRegenStamina <= 0)
             {
                 system.PlusStamina(5);
             }
         }
-            
+
 
     }
-  
+
     void Update()
     {
-        damage = equpimentXar.basicDamage;
-        armor = equpimentXar.basicArmor;
-            TimeBegoreRegenStamina =Mathf.Clamp(TimeBegoreRegenStamina- Time.deltaTime,0,TimeBegoreRegenStamina);
-            if (Input.GetKeyDown(KeyCode.Tab)&& canOpenInv)
-            {
+       
+        TimeBegoreRegenStamina = Mathf.Clamp(TimeBegoreRegenStamina - Time.deltaTime, 0, TimeBegoreRegenStamina);
+        if (Input.GetKeyDown(KeyCode.Tab) && canOpenInv)
+        {
             isOpen = !isOpen;
-                if (isOpen)
+            if (isOpen)
+            {
+                canUseOther = false;
+                Invenotory.SetActive(true);
+                stats.SetActive(false);
+                foreach (var item in InventoryUI)
                 {
-                    canUseOther = false;
-                    Invenotory.SetActive(true);
-                    stats.SetActive(false);
-                    foreach (var item in InventoryUI)
-                    {
-                        item.SetActive(true);
-                    }
-                SetMove(false);
+                    item.SetActive(true);
                 }
-                else if (!isOpen)
-                {
+                SetMove(false);
+            }
+            else if (!isOpen)
+            {
                 canUseOther = true;
                 Invenotory.SetActive(false);
-                    stats.SetActive(false);
+                stats.SetActive(false);
                 SetMove(true);
             }
-            }
-            animator.SetFloat("speed", Mathf.Abs(HorInp));
-            HorInp = Input.GetAxisRaw("Horizontal") * Speed * Time.fixedDeltaTime;
-            if (Input.GetKeyDown(KeyCode.Space)&&canMove && !IsOnLadder)
+        }
+        animator.SetFloat("speed", Mathf.Abs(HorInp));
+        animator.SetFloat("velocityY",rb.velocity.y);
+        HorInp = Input.GetAxisRaw("Horizontal") * Speed * Time.fixedDeltaTime;
+        if (Input.GetKeyDown(KeyCode.Space) && canMove && !IsOnLadder)
+        {
+            animator.SetTrigger("jump");
+            animator.SetBool("isGrounded", false);
+            jump = true;
+        }
+        if (Input.GetMouseButtonDown(0) && canMove)
+        {
+            if (system.GetStamina() > NeedStaminaToAttack)
             {
-                animator.SetTrigger("jump");
-                jump = true;
+                animator.SetTrigger("attack");
+                TimeBegoreRegenStamina = 3f;
             }
-            if (Input.GetMouseButtonDown(0) && canMove)
+            else
             {
-                if (system.GetStamina() > NeedStaminaToAttack)
-                {
-                    animator.SetTrigger("attack");
-                    TimeBegoreRegenStamina = 3f;
-                }
-                else
-                {
-                    Debug.Log("Нет сил для атаки");
-                }
+                Debug.Log("Нет сил для атаки");
+            }
 
-            }
-        
+        }
+
 
 
     }
@@ -138,9 +141,12 @@ public class Controller : MonoBehaviour
 
         controller2D.Move(HorInp, false, jump);
         jump = false;
-        
+
     }
-    
+    public void HasLended()
+    {
+        animator.SetBool("isGrounded",true);
+    }
     public void Rest()
     {
         system.FullHeal();
