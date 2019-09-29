@@ -31,14 +31,10 @@ public class Controller : MonoBehaviour
     [Header("Характеристики перса")]
     [SerializeField] float _speed = 40f;
     [SerializeField] float _damage;
-    [SerializeField] float _speddOnLadder;
     bool isOpen = false;
     [SerializeField] Rigidbody2D rb;
     public bool canUseOther { get; set; }
-
     public float Speed { get => _speed; set => _speed = value; }
-    public bool IsOnLadder { get => isOnLadder; set => isOnLadder = value; }
-
     public HealthSystem system;
     ExpSystem expSystem;
     public PlayerEqupimentXar equpimentXar;
@@ -77,7 +73,7 @@ public class Controller : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             if (TimeBegoreRegenStamina <= 0)
             {
-                system.PlusStamina(5);
+                system.PlusStamina(20);
             }
         }
 
@@ -113,7 +109,7 @@ public class Controller : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(HorInp));
         animator.SetFloat("velocityY",rb.velocity.y);
         HorInp = Input.GetAxisRaw("Horizontal") * Speed * Time.fixedDeltaTime;
-        if (Input.GetKeyDown(KeyCode.Space) && canMove && !IsOnLadder)
+        if (Input.GetKeyDown(KeyCode.Space) && canMove)
         {
             animator.SetTrigger("jump");
             animator.SetBool("isGrounded", false);
