@@ -27,6 +27,7 @@ public class Controller : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] CharacterController2D controller2D;
     private float HorInp;
+    private float VerInp;
     private bool jump = false;
     [Header("Характеристики перса")]
     [SerializeField] float _speed = 40f;
@@ -82,7 +83,8 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-       
+        HorInp = Input.GetAxisRaw("Horizontal") * Speed * Time.fixedDeltaTime;
+        VerInp = Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime;
         TimeBegoreRegenStamina = Mathf.Clamp(TimeBegoreRegenStamina - Time.deltaTime, 0, TimeBegoreRegenStamina);
         if (Input.GetKeyDown(KeyCode.Tab) && canOpenInv)
         {
@@ -108,13 +110,19 @@ public class Controller : MonoBehaviour
         }
         animator.SetFloat("speed", Mathf.Abs(HorInp));
         animator.SetFloat("velocityY",rb.velocity.y);
-        HorInp = Input.GetAxisRaw("Horizontal") * Speed * Time.fixedDeltaTime;
-        if (Input.GetKeyDown(KeyCode.Space) && canMove)
+        
+        if (Input.GetKeyDown(KeyCode.Space)&&canMove)
         {
             animator.SetTrigger("jump");
             animator.SetBool("isGrounded", false);
             jump = true;
+            if (isOnLadder)
+            {
+                StartCoroutine(IgnoreLadder());
+            }
+            
         }
+        
         if (Input.GetMouseButtonDown(0) && canMove)
         {
             if (system.GetStamina() > NeedStaminaToAttack)
@@ -128,14 +136,27 @@ public class Controller : MonoBehaviour
             }
 
         }
-
-
-
+    }
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("ladder") && Input.GetKey(KeyCode.Space))
+        {
+            
+            isOnLadder = true;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("ladder"))
+        {
+            isOnLadder = false;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
     }
     void FixedUpdate()
     {
-
-        controller2D.Move(HorInp, false, jump);
+        controller2D.Move(HorInp, false, jump,isOnLadder,VerInp);
         jump = false;
 
     }
@@ -164,6 +185,13 @@ public class Controller : MonoBehaviour
         canOpenInv = inv;
     }
     
-    
+    IEnumerator IgnoreLadder()
+    {
+       
+        Physics2D.IgnoreLayerCollision(8, 12,true);
+        yield return new  WaitForSeconds(0.3f);
+        Physics2D.IgnoreLayerCollision(8, 12, false);
+        
+    }
 
 }
