@@ -61,7 +61,7 @@ public class HealthDisplay : MonoBehaviour
             if (gameobject.gameObject.CompareTag("Player"))
             {
                 gameobject.GetComponent<ExpSystem>().GainExp(500);
-                gameobject.GetComponent<Controller>().system.PlusSouls(200);
+                gameobject.GetComponent<Controller>().moneySystem.GetSouls(200);
                 break;
             }
         }

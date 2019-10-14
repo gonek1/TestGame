@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 
 public class Controller : MonoBehaviour
 {
+    [SerializeField] GameObject[] Skills;
+    [SerializeField] Text SoulsText;
     [SerializeField] bool isOnLadder;
     [SerializeField] bool canOpenInv = true;
     [SerializeField] bool canMove = true;
@@ -39,17 +42,19 @@ public class Controller : MonoBehaviour
     public HealthSystem system;
     ExpSystem expSystem;
     public PlayerEqupimentXar equpimentXar;
+    public MoneySystem moneySystem;
     void Start()
     {
-       
+        
         equpimentXar = new PlayerEqupimentXar(40, 1);
         canUseOther = true;
         StartCoroutine(RegenStamina());
         expSystem = GetComponent<ExpSystem>();
-        system = new HealthSystem(150, 50, 100, 150);
+        system = new HealthSystem(150, 50, 100);
         controller2D = GetComponent<CharacterController2D>();
         healthDisplay.Setup(system);
         animator = GetComponent<Animator>();
+        moneySystem = new MoneySystem(0, SoulsText);
     }
     void Awake()
     {
@@ -109,9 +114,9 @@ public class Controller : MonoBehaviour
             }
         }
         animator.SetFloat("speed", Mathf.Abs(HorInp));
-        animator.SetFloat("velocityY",rb.velocity.y);
-        
-        if (Input.GetKeyDown(KeyCode.Space)&&canMove)
+        animator.SetFloat("velocityY", rb.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Space) && canMove)
         {
             animator.SetTrigger("jump");
             animator.SetBool("isGrounded", false);
@@ -120,9 +125,9 @@ public class Controller : MonoBehaviour
             {
                 StartCoroutine(IgnoreLadder());
             }
-            
+
         }
-        
+
         if (Input.GetMouseButtonDown(0) && canMove)
         {
             if (system.GetStamina() > NeedStaminaToAttack)
@@ -136,6 +141,36 @@ public class Controller : MonoBehaviour
             }
 
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if(Skills[0].GetComponent<SkillSlot>().SkillIn!=null)
+            Skills[0].GetComponent<SkillSlot>().Use();
+            else
+            {
+                 Debug.Log("Нет скила в ячейке!");
+            }
+        }
+       
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (Skills[1].GetComponent<SkillSlot>().SkillIn != null)
+                Skills[1].GetComponent<SkillSlot>().Use();
+            else
+            {
+                Debug.Log("Нет скила в ячейке!");
+            }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (Skills[2].GetComponent<SkillSlot>().SkillIn != null)
+                Skills[2].GetComponent<SkillSlot>().Use();
+            else
+            {
+                Debug.Log("Нет скила в ячейке!");
+            }
+        }
+        
     }
     void OnTriggerStay2D(Collider2D col)
     {

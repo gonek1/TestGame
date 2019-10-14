@@ -19,12 +19,12 @@ public class Inventory : MonoBehaviour
     }
     #endregion
     
-    public Transform itemsParent;
+    [SerializeField] Transform itemsParent;
     public InventorySlot[] slots;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallBack;
-    public int space = 20;
-    public List<Item> items = new List<Item>();
+    [SerializeField] int space = 20;
+    [SerializeField] List<Item> items = new List<Item>();
 
     private void Start()
     {

@@ -17,7 +17,7 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
     protected ChestManager chestManager;
     //public Transform sometransform;
     //public Transform Parent;
-   protected Item item;
+    protected Item item;
     public Image icon;
     
     public virtual void AddItem(Item _item)

@@ -12,8 +12,7 @@ public class HealthSystem
     public event EventHandler OnManaChanged;
     public event EventHandler OnStaminaChanged;
     public event EventHandler HealthDownToZero;
-    public int Souls { get; set; }
-    public HealthSystem(int health, int mana, int Stamina,int souls)
+    public HealthSystem(int health, int mana, int Stamina)
     {
         this.healthMax = health;
         this.manaMax = mana;
@@ -21,23 +20,14 @@ public class HealthSystem
         this.mana = manaMax;
         staminaMax = Stamina;
         stamina = staminaMax;
-        Souls = souls;
+        
     }
     public HealthSystem(int health)
     {
         this.healthMax = health;
         this.health = healthMax;
     }
-    public int MinusSouls(int amount)
-    {
-        Souls =(int) Mathf.Clamp(Souls - amount, 0, Mathf.Infinity);
-        return Souls;
-    }
-    public int PlusSouls(int amount)
-    {
-        Souls =(int) Mathf.Clamp(Souls + amount, 0, Mathf.Infinity);
-        return Souls;
-    }
+    
     public int GetStamina()
     {
         return stamina;

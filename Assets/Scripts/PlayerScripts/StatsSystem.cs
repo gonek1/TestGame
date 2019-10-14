@@ -102,12 +102,12 @@ public class StatsSystem : MonoBehaviour
         _MaxManaTex.text = controller.system.GetMaxMana().ToString();
         _FreeLvlPointsText.text = _FreeLvlPoints.ToString();
         _MaxStaminaText.text = controller.system.GetMaxStamina().ToString();
-        _FreeSouls.text = controller.system.Souls.ToString();
+        _FreeSouls.text = controller.moneySystem.ReturnSoulsCount().ToString();
     }
     public void Refresh()
     {
         _lvlText.text = expSystem.currentlvl.ToString();
         _FreeLvlPointsText.text = _FreeLvlPoints.ToString();
-        _FreeSouls.text = controller.system.Souls.ToString();
+        _FreeSouls.text = controller.moneySystem.ReturnSoulsCount().ToString();
     }
 }

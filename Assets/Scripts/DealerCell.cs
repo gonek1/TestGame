@@ -5,21 +5,25 @@ using UnityEngine.EventSystems;
 
 public class DealerCell : MonoBehaviour, IPointerClickHandler
 {
-     protected Item item;
-    Inventory inventory;
-    public Image icon;
+    [SerializeField] GameObject ShopInfoPanel;
+    [SerializeField] GameObject ToolTipPrebaf;
+    [SerializeField] Text description;
+    [SerializeField] Text ItemCost;
+    private Item item;
+    private Inventory inventory;
+    [SerializeField] Image icon;
     void Start()
     {
+        
         inventory = Inventory.instance;
     }
-
-    // Update is called once per frame
     void Update()
     {
         
     }
     public virtual void AddItem(Item _item)
     {
+        
         item = _item;
         icon.enabled = true;
         icon.sprite = _item.Icon;
@@ -37,28 +41,52 @@ public class DealerCell : MonoBehaviour, IPointerClickHandler
         }
         else if (eventData.button == PointerEventData.InputButton.Left)
         {
-            if (Controller.instance.system.Souls>item.Cost)
-            {
-                Controller.instance.system.MinusSouls(item.Cost);
-            }
-            else
-            {
-                Debug.Log("Dont enough souls!");
-                return;
 
-            }
-            bool wasBought = inventory.AddItem(item);
-            if (wasBought)
-            {
-                DestroyItSelf();
-            }
-            else
-            {
-                Debug.Log("Not EnoughSlotInInventory");
-            }
-           
-           
+            BuyItem();
+
+
         }
 
+    }
+    public void UpdateInfo()
+    {
+        if (item)
+        {
+            ShopInfoPanel.SetActive(true);
+            description.text = item.Description;
+            ItemCost.text = item.Cost.ToString();
+        }
+
+    }
+    public void ClosePanel()
+    {
+        
+        ShopInfoPanel.SetActive(false);
+        description.text = null;
+        ItemCost.text = null;
+        
+    }
+    void BuyItem()
+    {
+        if (Controller.instance.moneySystem.ReturnSoulsCount() >= item.Cost)
+        {
+            Controller.instance.moneySystem.SpendSouls(item.Cost);
+        }
+        else
+        {
+            Debug.Log("Dont enough souls!");
+            return;
+
+        }
+        bool wasBought = inventory.AddItem(item);
+        if (wasBought)
+        {
+            DestroyItSelf();
+            ClosePanel();
+        }
+        else
+        {
+            Debug.Log("Not Enough Slot InInventory");
+        }
     }
 }

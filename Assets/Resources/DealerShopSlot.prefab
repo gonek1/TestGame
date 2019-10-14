@@ -370,8 +370,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: ShowInfoPanel
+        - m_Target: {fileID: 4984649330385933920}
+          m_MethodName: UpdateInfo
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -387,8 +387,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: HideInfoPanel
+        - m_Target: {fileID: 4984649330385933920}
+          m_MethodName: ClosePanel
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -412,6 +412,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9850f5594d35a9e4da70f9856666da7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShopInfoPanel: {fileID: 0}
+  ToolTipPrebaf: {fileID: 9089718292765284919, guid: 2cbe03f9a2aac394ab0f52efde3f3b65,
+    type: 3}
+  description: {fileID: 0}
+  ItemCost: {fileID: 0}
   icon: {fileID: 4176972742429334530}
 --- !u!1 &4176972743735130376
 GameObject:

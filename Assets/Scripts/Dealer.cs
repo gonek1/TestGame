@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dealer : MonoBehaviour
 {
     [SerializeField] List<Item> items = new List<Item>();
     [SerializeField] Transform content;
-    [SerializeField] GameObject CellPrefab;
     [SerializeField] GameObject ShopPanel;
+    [SerializeField] GameObject ShopInfoPanel;
+    [SerializeField] Text description;
+    [SerializeField] Text ItemCost;
     TypeOfAction typeOfAction = TypeOfAction.Use;
     void Start()
     {
@@ -20,10 +23,9 @@ public class Dealer : MonoBehaviour
     }
     void Render()
     {
-        foreach (var item in items)
+        for (int i = 0; i < items.Count; i++)
         {
-           var cell =  Instantiate(CellPrefab, content);
-            cell.GetComponent<DealerCell>().AddItem(item);
+            content.GetChild(i).GetComponent<DealerCell>().AddItem(items[i]);
         }
     }
     public void OpenShop()
@@ -61,4 +63,5 @@ public class Dealer : MonoBehaviour
             InfoManager.instance.ShowInfoPanel(typeOfAction, this.gameObject);
         }
     }
+    
 }
