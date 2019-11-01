@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Skill
+[CreateAssetMenu(menuName = "Skill/New Skill")]
+public class Skill:ScriptableObject
 {
-    void Use();
-     string Name { get; set; }
-     Sprite UiIcon { get; set; }
-    void AddToSlot(int index);
+    public int SoulsCost;
+    public int ManaCost = 100;
+    public string Name;
+    [Multiline(10)]
+    public string Description = "";
+    public Sprite Icon;
+    public virtual void Use()
+    {
+
+    }
 }

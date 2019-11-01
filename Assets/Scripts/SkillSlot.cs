@@ -3,22 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkillSlot : MonoBehaviour
+public class SkillSlot : Slot
 {
-    [SerializeField] Image Icon;
-    public Skill SkillIn { get; set; }
-    public void ClearSlot()
+    [SerializeField] Skill skillIn;
+
+    public Skill SkillIn { get => skillIn; set => skillIn = value; }
+
+    private void OnEnable()
     {
-        Icon = null;
-        SkillIn = null;
+        Invoke("Refresh", 0.1f);
     }
-    public void AddSkill(Skill skill)
+    public override void AddSkill(Skill skill)
     {
-        Icon.sprite = skill.UiIcon;
+        base.AddSkill(skill);
         SkillIn = skill;
+        UiIcon.sprite = skill.Icon;
     }
+
+    public override void Remove()
+    {
+        if (SkillIn)
+        {
+            SkillIn = null;
+        }
+      
+        
+    }   
     public void Use()
     {
-        SkillIn.Use();
+        if (SkillIn)
+        {
+            SkillIn.Use();
+        }
+        
+    }
+    public void Refresh()
+    {
+        if (Controller.instance.ActiveSkills[transform.GetSiblingIndex()] != null)
+        {
+            AddSkill(Controller.instance.ActiveSkills[transform.GetSiblingIndex()]);
+        }
     }
 }

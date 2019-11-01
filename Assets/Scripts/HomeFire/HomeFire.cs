@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class HomeFire : MonoBehaviour
 {
+    [SerializeField] GameObject SkillPanelInInventory;
+    [SerializeField] GameObject SkillCellPrefab;
+    [SerializeField] Transform Content;
+    [SerializeField] List<Skill> Skills = new List<Skill>();
     [SerializeField] GameObject Panel;
     bool _IsPlayerNear = false;
     [SerializeField] TypeOfAction type = TypeOfAction.Use;
@@ -54,6 +58,7 @@ public class HomeFire : MonoBehaviour
             OpenPanel();
             controller.SetOpenInv(false);
             controller.SetMove(false);
+            SkillManager.instance.SkillPanel = SkillPanelInInventory;
         }
     }
     void OpenPanel()
@@ -64,5 +69,35 @@ public class HomeFire : MonoBehaviour
     {
         Panel.SetActive(false);
     }
+    private void Start()
+    {           
+
+        UpdateSkills();
+        
+    }
+
+    private void UpdateSkills()
+    {
+        for (int i = 0; i < Content.childCount; i++)
+        {
+            Content.GetChild(i).GetComponent<SkillCellSripts>().Remove();
+        }
+        for (int i = 0; i < Skills.Count; i++)
+        {
+            var cell = Instantiate(SkillCellPrefab, Content);
+            cell.GetComponent<SkillCellSripts>().AddSkill(Skills[i]);
+        }
+    }
+
+    public void Refresh()
+    {
+        int x = Controller.instance.ReturnSkills().Count;
+        List<Skill> skillss = Controller.instance.ReturnSkills();
+        for (int i = 0; i < x; i++)
+        {
+            SkillPanelInInventory.transform.GetChild(i).GetComponent<SkillInInventory>().AddSkill(skillss[i]);
+        }
+    }
    
+
 }

@@ -7,46 +7,48 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
+    [Header("Инвентарь")]
+    [SerializeField] GameObject Invenotory;
+    [SerializeField] GameObject[] InventoryUI;
+    [Space(10)]
+    [Header("Способности")]
+    [SerializeField] List<Skill> SkillsInInventory = new List<Skill>();
+    public Skill[] ActiveSkills = new Skill[3];
     [SerializeField] GameObject[] Skills;
+    [Space(10)]
+    [Header("Характеристики перса")]
+    [SerializeField] float _speed = 40f;
+    [SerializeField] int _damage;
+    [SerializeField] int _armor;
+    [Space(10)]
+    [Header("Другое")]
     [SerializeField] Text SoulsText;
-    [SerializeField] bool isOnLadder;
-    [SerializeField] bool canOpenInv = true;
-    [SerializeField] bool canMove = true;
-    public bool CanMove()
-    {
-        return canMove;
-    }
-    [SerializeField] int damage;
-    [SerializeField] int armor;
-    [SerializeField] float TimeBegoreRegenStamina = 3f;
+    [SerializeField] float TimeBegoreRegenStamina = 1.5f;
     [SerializeField] int NeedStaminaToAttack = 25;
     public static Controller instance;
     public HealthDisplay healthDisplay;
     [Range(0, 2)] public float Radius;
     [SerializeField] Transform attackPlace;
-    [SerializeField] GameObject stats;
-    [SerializeField] GameObject Invenotory;
-    [SerializeField] GameObject[] InventoryUI;
     [SerializeField] Animator animator;
     [SerializeField] CharacterController2D controller2D;
+    bool isOnLadder;
+    bool canOpenInv = true;
+    bool canMove = true;
     private float HorInp;
     private float VerInp;
     private bool jump = false;
-    [Header("Характеристики перса")]
-    [SerializeField] float _speed = 40f;
-    [SerializeField] float _damage;
     bool isOpen = false;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] GameObject stats;
     public bool canUseOther { get; set; }
-    public float Speed { get => _speed; set => _speed = value; }
+    public float Speed { get => _speed; set => _speed = value; } 
     public HealthSystem system;
     ExpSystem expSystem;
     public PlayerEqupimentXar equpimentXar;
     public MoneySystem moneySystem;
     void Start()
     {
-        
-        equpimentXar = new PlayerEqupimentXar(40, 1);
+        equpimentXar = new PlayerEqupimentXar(_damage,_armor);
         canUseOther = true;
         StartCoroutine(RegenStamina());
         expSystem = GetComponent<ExpSystem>();
@@ -65,7 +67,7 @@ public class Controller : MonoBehaviour
         Collider2D[] enemys = Physics2D.OverlapCircleAll(new Vector2(attackPlace.position.x, attackPlace.position.y), Radius);
         foreach (var enemy in enemys)
         {
-
+           
             if (enemy.gameObject.tag == "Enemy")
                 enemy.GetComponent<Health>().TakeDamage((int)equpimentXar.basicDamage);
         }
@@ -85,7 +87,10 @@ public class Controller : MonoBehaviour
 
 
     }
-
+    public bool CanMove()
+    {
+        return canMove;
+    }
     void Update()
     {
         HorInp = Input.GetAxisRaw("Horizontal") * Speed * Time.fixedDeltaTime;
@@ -133,7 +138,7 @@ public class Controller : MonoBehaviour
             if (system.GetStamina() > NeedStaminaToAttack)
             {
                 animator.SetTrigger("attack");
-                TimeBegoreRegenStamina = 3f;
+                TimeBegoreRegenStamina = 1.5f;
             }
             else
             {
@@ -143,11 +148,14 @@ public class Controller : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if(Skills[0].GetComponent<SkillSlot>().SkillIn!=null)
-            Skills[0].GetComponent<SkillSlot>().Use();
+            if (Skills[0].GetComponent<SkillSlot>().SkillIn != null)
+            {
+                
+                Skills[0].GetComponent<SkillSlot>().Use();
+            }
             else
             {
-                 Debug.Log("Нет скила в ячейке!");
+                Debug.Log("Нет скила в ячейке!");
             }
         }
        
@@ -170,7 +178,6 @@ public class Controller : MonoBehaviour
                 Debug.Log("Нет скила в ячейке!");
             }
         }
-        
     }
     void OnTriggerStay2D(Collider2D col)
     {
@@ -227,6 +234,24 @@ public class Controller : MonoBehaviour
         yield return new  WaitForSeconds(0.3f);
         Physics2D.IgnoreLayerCollision(8, 12, false);
         
+    }
+    public void AddSkillToInvenory(Skill skill)
+    {
+        SkillsInInventory.Add(skill);
+    }
+    public void AddActiveSkill(int index, Skill skill)
+    {
+        Skills[index].transform.GetComponent<SkillSlot>().AddSkill(skill);
+        ActiveSkills[index] = skill;
+       // Skills[index].transform.GetComponent<SkillSlot>().Refresh();
+    }
+    public void RemoveSkillFromInvenory(Skill skill)
+    {
+        SkillsInInventory.Remove(skill);
+    }
+    public List<Skill> ReturnSkills()
+    {
+        return SkillsInInventory;
     }
 
 }

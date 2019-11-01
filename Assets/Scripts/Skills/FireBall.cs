@@ -2,30 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour,Skill
+[CreateAssetMenu(menuName = "Skill/FireBall")]
+public class FireBall : Skill
 {
-
-    GameObject FireBallPrefab;
-    [SerializeField] string _name;
-    [SerializeField] Sprite _Icon;
-    public void Use()
+    [SerializeField] float speed = 100f;
+    [SerializeField] GameObject FireBallPrefab;
+    GameObject  Player;
+    public override void Use()
     {
+        Player = GameObject.FindWithTag("Player");
+        if ( Controller.instance.system.GetMana() >= ManaCost)
+        {
+            Controller.instance.system.minusMana(ManaCost);
+            var fireBall =  Instantiate(FireBallPrefab, Player.transform.position,Player.transform.rotation);
+           // fireBall.GetComponent<Rigidbody2D>().AddForce(Player.transform.right * speed);
+                
+        }
+        else
+        {
+            Debug.Log("Не хватает маны!");
+        }
+    }
  
-            GameObject fireball = Instantiate(Resources.Load("fireball_01") as GameObject);
-            
-    
-    }
-    void Start()
-    {
-        UiIcon = _Icon;
-        SkillManager.instance.AddSkill(this);
-    }
 
-    public string Name { get=>_name;set=>_name = value; }
-    public Sprite UiIcon { get => _Icon;  set =>_Icon = value;}
-    
-
-    public void AddToSlot(int index)
+    public void AddToSlot()
     {
         SkillManager.instance.AddSkill(this);
     }

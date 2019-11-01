@@ -4,40 +4,37 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TalantSlot : MonoBehaviour, IPointerClickHandler
+public class TalantSlot : Slot, IPointerClickHandler
 {
     TalantManager talantManager;
     [SerializeField] Text text;
-    [SerializeField] Image icon;
+   
     public Talant _talant;
     void Start()
     {
         talantManager = TalantManager.instance;
     }
-    public void AddQuip(Talant talant)
+    public override void AddQuip(Talant talant)
     {
         text.text = talant.Name;
         _talant = talant;
-        icon.enabled = true;
-        icon.sprite = talant.Icon;
+        UiIcon.enabled = true;
+        UiIcon.sprite = talant.Icon;
     }
-    public void OnPointerClick(PointerEventData eventData)
+    public override void OnPointerClick(PointerEventData eventData)
     {
-
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            ClearSlot();
+            Remove();
         }
-
-
     }
-    public void ClearSlot()
+    public override void Remove()
     {
         if (_talant)
         {
             text.text = null;
-            icon.sprite = null;
-            icon.enabled = false;
+            UiIcon.sprite = null;
+            UiIcon.enabled = false;
             talantManager.RemoveTalant(_talant);
             _talant = null;
         }

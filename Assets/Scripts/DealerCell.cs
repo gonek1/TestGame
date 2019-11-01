@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class DealerCell : MonoBehaviour, IPointerClickHandler
+public class DealerCell : Slot, IPointerClickHandler
 {
     [SerializeField] GameObject ShopInfoPanel;
     [SerializeField] GameObject ToolTipPrebaf;
@@ -11,28 +11,17 @@ public class DealerCell : MonoBehaviour, IPointerClickHandler
     [SerializeField] Text ItemCost;
     private Item item;
     private Inventory inventory;
-    [SerializeField] Image icon;
     void Start()
     {
-        
         inventory = Inventory.instance;
     }
-    void Update()
+    public override void AddItem(Item _item)
     {
-        
-    }
-    public virtual void AddItem(Item _item)
-    {
-        
         item = _item;
-        icon.enabled = true;
-        icon.sprite = _item.Icon;
+        UiIcon.enabled = true;
+        UiIcon.sprite = _item.Icon;
     }
-    public void DestroyItSelf()
-    {
-        Destroy(gameObject);
-    }
-    public virtual void OnPointerClick(PointerEventData eventData)
+    public override void OnPointerClick(PointerEventData eventData)
     {
 
         if (eventData.button == PointerEventData.InputButton.Right)

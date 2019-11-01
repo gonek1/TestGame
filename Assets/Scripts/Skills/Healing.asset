@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65870a91072662a40a48393581c1c417, type: 3}
+  m_Name: Healing
+  m_EditorClassIdentifier: 
+  SoulsCost: 100
+  ManaCost: 20
+  Name: "\u0418\u0441\u0446\u0435\u043B\u0435\u043D\u0438\u0435"
+  Description: "\u041F\u0440\u0438 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0438
+    \u0440\u0435\u0433\u0435\u043D\u0438\u0442 20 \u0445\u043F"
+  Icon: {fileID: 21300000, guid: 4b7f8f2aba943ab41aea80d5ab168c14, type: 3}
+  healamount: 20
