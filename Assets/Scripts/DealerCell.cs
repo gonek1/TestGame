@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class DealerCell : Slot, IPointerClickHandler
 {
-    [SerializeField] GameObject ShopInfoPanel;
     [SerializeField] GameObject ToolTipPrebaf;
     [SerializeField] Text description;
     [SerializeField] Text ItemCost;
@@ -41,7 +40,7 @@ public class DealerCell : Slot, IPointerClickHandler
     {
         if (item)
         {
-            ShopInfoPanel.SetActive(true);
+            
             description.text = item.Description;
             ItemCost.text = item.Cost.ToString();
         }
@@ -49,8 +48,7 @@ public class DealerCell : Slot, IPointerClickHandler
     }
     public void ClosePanel()
     {
-        
-        ShopInfoPanel.SetActive(false);
+     
         description.text = null;
         ItemCost.text = null;
         

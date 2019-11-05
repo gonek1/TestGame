@@ -8,7 +8,6 @@ public class Dealer : MonoBehaviour
     [SerializeField] List<Item> items = new List<Item>();
     [SerializeField] Transform content;
     [SerializeField] GameObject ShopPanel;
-    [SerializeField] GameObject ShopInfoPanel;
     [SerializeField] Text description;
     [SerializeField] Text ItemCost;
     TypeOfAction typeOfAction = TypeOfAction.Use;
