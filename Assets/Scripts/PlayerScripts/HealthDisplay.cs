@@ -31,7 +31,7 @@ public class HealthDisplay : MonoBehaviour
 
     private void HealthSystem_HealthDownToZero(object sender, System.EventArgs e)
     {
-        Destroy(gameObject);
+        
     }
 
     public void SetupForEnemy(EnemyHealthsystem enemy)

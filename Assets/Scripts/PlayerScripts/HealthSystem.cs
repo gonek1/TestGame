@@ -12,6 +12,7 @@ public class HealthSystem
     public event EventHandler OnManaChanged;
     public event EventHandler OnStaminaChanged;
     public event EventHandler HealthDownToZero;
+    public event EventHandler TakeDamageEvent;
     public HealthSystem(int health, int mana, int Stamina)
     {
         this.healthMax = health;
@@ -81,7 +82,9 @@ public class HealthSystem
     }
     public void TakeDamage(int amount)
     {
-        health = Mathf.Clamp(health - (amount -  (amount*Controller.instance.equpimentXar.basicArmor*2)/100), 0, healthMax);
+        
+        health = Mathf.Clamp(health - (amount -  (amount*Controller.instance.equpimentXar.totalArmor*2)/100), 0, healthMax);
+        TakeDamageEvent?.Invoke(this, EventArgs.Empty);
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
         if (health <=0 )
         {

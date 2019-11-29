@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5489020701685783905}
   - component: {fileID: 5489020701685783907}
   - component: {fileID: 5489020701685783906}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,6 +63,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
@@ -90,7 +92,7 @@ GameObject:
   - component: {fileID: 5489020701701736448}
   - component: {fileID: 5489020701701736450}
   - component: {fileID: 5489020701701736449}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,6 +144,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -151,7 +155,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020701826948341
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +166,7 @@ GameObject:
   - component: {fileID: 5489020701826948342}
   - component: {fileID: 5489020701826948344}
   - component: {fileID: 5489020701826948343}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,6 +218,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -224,7 +229,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020701833695036
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5489020701833695037}
   - component: {fileID: 5489020701833695038}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: GridLayoutGroupSkillInInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +331,7 @@ GameObject:
   - component: {fileID: 5489020701842140708}
   - component: {fileID: 5489020701842140707}
   - component: {fileID: 5489020701842140706}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Leave button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,6 +384,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -389,7 +395,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020701842140706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +482,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020701851669631
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +496,7 @@ GameObject:
   - component: {fileID: 5489020701851669603}
   - component: {fileID: 5489020701851669602}
   - component: {fileID: 5489020701851669601}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 273.3, y: -289}
+  m_AnchoredPosition: {x: 196, y: -125}
   m_SizeDelta: {x: 264.6, y: 124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020701851669603
@@ -542,6 +549,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -551,7 +560,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020701851669601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,6 +614,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020701890320184
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +627,7 @@ GameObject:
   - component: {fileID: 5489020701890320185}
   - component: {fileID: 5489020701890320187}
   - component: {fileID: 5489020701890320186}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,6 +679,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 109
@@ -694,7 +706,7 @@ GameObject:
   - component: {fileID: 5489020701943782243}
   - component: {fileID: 5489020701943782245}
   - component: {fileID: 5489020701943782244}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,6 +758,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -755,7 +769,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020701991484359
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +780,7 @@ GameObject:
   - component: {fileID: 5489020701991484360}
   - component: {fileID: 5489020701991484362}
   - component: {fileID: 5489020701991484361}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,6 +832,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -828,7 +843,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020701996139021
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +857,7 @@ GameObject:
   - component: {fileID: 5489020701996139023}
   - component: {fileID: 5489020701996139022}
   - component: {fileID: 5489020701996139122}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,10 +879,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1565, y: -125}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020701996139121
 CanvasRenderer:
@@ -896,6 +910,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -905,7 +921,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020701996139023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,6 +949,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -949,6 +966,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -975,6 +994,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020701996139022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,6 +1052,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702071779579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1068,7 @@ GameObject:
   - component: {fileID: 5489020702071779581}
   - component: {fileID: 5489020702071779580}
   - component: {fileID: 5489020702071779552}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,10 +1090,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 925, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 765, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702071779583
 CanvasRenderer:
@@ -1098,6 +1121,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1107,7 +1132,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702071779581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,6 +1160,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -1151,6 +1177,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -1177,6 +1205,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702071779580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,6 +1263,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702071792944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,7 +1276,7 @@ GameObject:
   - component: {fileID: 5489020702071792945}
   - component: {fileID: 5489020702071792947}
   - component: {fileID: 5489020702071792946}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,6 +1328,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1305,7 +1339,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702078648149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1350,7 @@ GameObject:
   - component: {fileID: 5489020702078648150}
   - component: {fileID: 5489020702078648152}
   - component: {fileID: 5489020702078648151}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,6 +1402,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1378,7 +1413,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702100367304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1425,7 @@ GameObject:
   - component: {fileID: 5489020702100367308}
   - component: {fileID: 5489020702100367307}
   - component: {fileID: 5489020702100367306}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: ActiveSkillsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1417,7 +1451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 509, y: -244.6}
+  m_AnchoredPosition: {x: 509, y: -39}
   m_SizeDelta: {x: 750, y: 262.4}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5489020702100367308
@@ -1446,6 +1480,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1455,7 +1491,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702100367306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,7 +1526,7 @@ GameObject:
   - component: {fileID: 5489020702150037462}
   - component: {fileID: 5489020702150037464}
   - component: {fileID: 5489020702150037463}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1543,6 +1578,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1552,7 +1589,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702172949946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,7 +1603,7 @@ GameObject:
   - component: {fileID: 5489020702172949948}
   - component: {fileID: 5489020702172949947}
   - component: {fileID: 5489020702172949951}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1589,10 +1625,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 765, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 605, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702172949950
 CanvasRenderer:
@@ -1620,6 +1656,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1629,7 +1667,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702172949948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,6 +1695,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -1673,6 +1712,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -1699,6 +1740,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702172949947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1755,6 +1798,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702212504760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,7 +1811,7 @@ GameObject:
   - component: {fileID: 5489020702212504761}
   - component: {fileID: 5489020702212504763}
   - component: {fileID: 5489020702212504762}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1818,6 +1863,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1827,7 +1874,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702242047936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,7 +1888,7 @@ GameObject:
   - component: {fileID: 5489020702242047938}
   - component: {fileID: 5489020702242047937}
   - component: {fileID: 5489020702242047941}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1864,10 +1910,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 925, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 765, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702242047940
 CanvasRenderer:
@@ -1895,6 +1941,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1904,7 +1952,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702242047938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,6 +1980,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -1948,6 +1997,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -1974,6 +2025,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702242047937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,6 +2083,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702251787425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2097,7 @@ GameObject:
   - component: {fileID: 5489020702251787429}
   - component: {fileID: 5489020702251787428}
   - component: {fileID: 5489020702251787427}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Rest Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2095,6 +2150,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2104,7 +2161,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702251787427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,6 +2215,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702271885049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,7 +2231,7 @@ GameObject:
   - component: {fileID: 5489020702271885051}
   - component: {fileID: 5489020702271885050}
   - component: {fileID: 5489020702271885054}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2195,10 +2253,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1085, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 925, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702271885053
 CanvasRenderer:
@@ -2226,6 +2284,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2235,7 +2295,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702271885051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2264,6 +2323,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -2279,6 +2340,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -2305,6 +2368,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702271885050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2361,6 +2426,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702273120902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2372,7 +2439,7 @@ GameObject:
   - component: {fileID: 5489020702273120903}
   - component: {fileID: 5489020702273120905}
   - component: {fileID: 5489020702273120904}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2424,6 +2491,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2433,7 +2502,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702305393796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,7 +2513,7 @@ GameObject:
   - component: {fileID: 5489020702305393797}
   - component: {fileID: 5489020702305393799}
   - component: {fileID: 5489020702305393798}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Info Description Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2468,8 +2536,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000049591064, y: 0}
-  m_SizeDelta: {x: 2397.7, y: 267.9}
+  m_AnchoredPosition: {x: 0.014999, y: 0}
+  m_SizeDelta: {x: 1838.6, y: 267.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702305393799
 CanvasRenderer:
@@ -2497,6 +2565,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 48
@@ -2522,7 +2592,7 @@ GameObject:
   - component: {fileID: 5489020702350042103}
   - component: {fileID: 5489020702350042105}
   - component: {fileID: 5489020702350042104}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2574,6 +2644,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2583,7 +2655,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702362939151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,7 +2669,7 @@ GameObject:
   - component: {fileID: 5489020702362939249}
   - component: {fileID: 5489020702362939248}
   - component: {fileID: 5489020702362939252}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2620,10 +2691,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 765, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 605, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702362939251
 CanvasRenderer:
@@ -2651,6 +2722,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2660,7 +2733,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702362939249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,6 +2761,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -2704,6 +2778,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -2730,6 +2806,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702362939248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2786,6 +2864,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702374801207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,7 +2877,7 @@ GameObject:
   - component: {fileID: 5489020702374801208}
   - component: {fileID: 5489020702374801210}
   - component: {fileID: 5489020702374801209}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2849,6 +2929,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 69
@@ -2875,7 +2957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5489020702383890680}
   - component: {fileID: 5489020702383890681}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: GridLayuotSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2898,8 +2980,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1253.6, y: -684.2}
-  m_SizeDelta: {x: 2299.8, y: 708.5}
+  m_AnchoredPosition: {x: 955.8, y: -684.2}
+  m_SizeDelta: {x: 1838.7, y: 708.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5489020702383890681
 MonoBehaviour:
@@ -2939,7 +3021,7 @@ GameObject:
   - component: {fileID: 5489020702406504818}
   - component: {fileID: 5489020702406504817}
   - component: {fileID: 5489020702406504816}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: ActiveSkillCell (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2961,10 +3043,10 @@ RectTransform:
   m_Father: {fileID: 5489020702100367305}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 375, y: -131.2}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702406504820
 CanvasRenderer:
@@ -2992,6 +3074,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3001,7 +3085,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702406504818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3030,6 +3113,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -3045,6 +3130,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -3071,6 +3158,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702406504817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3130,6 +3219,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702416018357
 GameObject:
   m_ObjectHideFlags: 0
@@ -3144,7 +3235,7 @@ GameObject:
   - component: {fileID: 5489020702416018359}
   - component: {fileID: 5489020702416018358}
   - component: {fileID: 5489020702416018362}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3166,10 +3257,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1565, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1405, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702416018361
 CanvasRenderer:
@@ -3197,6 +3288,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3206,7 +3299,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702416018359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3235,6 +3327,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -3250,6 +3344,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -3276,6 +3372,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702416018358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3332,6 +3430,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702433049429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,7 +3446,7 @@ GameObject:
   - component: {fileID: 5489020702433049431}
   - component: {fileID: 5489020702433049430}
   - component: {fileID: 5489020702433049434}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3368,10 +3468,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 445, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 285, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702433049433
 CanvasRenderer:
@@ -3399,6 +3499,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3408,7 +3510,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702433049431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3437,6 +3538,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -3452,6 +3555,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -3478,6 +3583,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702433049430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3534,6 +3641,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702437775188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3548,7 +3657,7 @@ GameObject:
   - component: {fileID: 5489020702437775190}
   - component: {fileID: 5489020702437775189}
   - component: {fileID: 5489020702437775193}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3570,10 +3679,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 765, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 605, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702437775192
 CanvasRenderer:
@@ -3601,6 +3710,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3610,7 +3721,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702437775190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3639,6 +3749,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -3654,6 +3766,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -3680,6 +3794,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702437775189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3736,6 +3852,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702456614562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,7 +3865,7 @@ GameObject:
   - component: {fileID: 5489020702456614563}
   - component: {fileID: 5489020702456614565}
   - component: {fileID: 5489020702456614564}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3799,6 +3917,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3808,7 +3928,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702469750759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,7 +3939,7 @@ GameObject:
   - component: {fileID: 5489020702469750760}
   - component: {fileID: 5489020702469750762}
   - component: {fileID: 5489020702469750761}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3846,8 +3965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2500, y: 1500}
+  m_AnchoredPosition: {x: 0.00010681, y: -0.000053406}
+  m_SizeDelta: {x: 1920, y: 1079.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702469750762
 CanvasRenderer:
@@ -3875,6 +3994,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 43a7d98bd4222b64e933596512dc09ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3884,7 +4005,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702499356936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3899,7 +4019,7 @@ GameObject:
   - component: {fileID: 5489020702499356938}
   - component: {fileID: 5489020702499356937}
   - component: {fileID: 5489020702499356941}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3921,10 +4041,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1565, y: -285}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702499356940
 CanvasRenderer:
@@ -3952,6 +4072,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3961,7 +4083,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702499356938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3990,6 +4111,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -4005,6 +4128,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -4031,6 +4156,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702499356937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4087,6 +4214,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702516664934
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,7 +4230,7 @@ GameObject:
   - component: {fileID: 5489020702516664936}
   - component: {fileID: 5489020702516664935}
   - component: {fileID: 5489020702516664939}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4123,10 +4252,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 285, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 125, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702516664938
 CanvasRenderer:
@@ -4154,6 +4283,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4163,7 +4294,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702516664936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4192,6 +4322,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -4207,6 +4339,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -4233,6 +4367,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702516664935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4289,6 +4425,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702534677163
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,7 +4438,7 @@ GameObject:
   - component: {fileID: 5489020702534677164}
   - component: {fileID: 5489020702534677166}
   - component: {fileID: 5489020702534677165}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4352,6 +4490,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 109
@@ -4380,7 +4520,7 @@ GameObject:
   - component: {fileID: 5489020702567294132}
   - component: {fileID: 5489020702567294131}
   - component: {fileID: 5489020702567294135}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4402,10 +4542,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1085, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 925, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702567294134
 CanvasRenderer:
@@ -4433,6 +4573,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4442,7 +4584,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702567294132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4471,6 +4612,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -4486,6 +4629,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -4512,6 +4657,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702567294131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4568,6 +4715,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702585573347
 GameObject:
   m_ObjectHideFlags: 0
@@ -4579,7 +4728,7 @@ GameObject:
   - component: {fileID: 5489020702585573348}
   - component: {fileID: 5489020702585573350}
   - component: {fileID: 5489020702585573349}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4631,6 +4780,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4640,7 +4791,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702603830900
 GameObject:
   m_ObjectHideFlags: 0
@@ -4655,7 +4805,7 @@ GameObject:
   - component: {fileID: 5489020702603830902}
   - component: {fileID: 5489020702603830901}
   - component: {fileID: 5489020702603830905}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4677,10 +4827,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 445, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 285, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702603830904
 CanvasRenderer:
@@ -4708,6 +4858,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4717,7 +4869,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702603830902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4746,6 +4897,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -4761,6 +4914,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -4787,6 +4942,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702603830901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4843,6 +5000,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702616953137
 GameObject:
   m_ObjectHideFlags: 0
@@ -4857,7 +5016,7 @@ GameObject:
   - component: {fileID: 5489020702616953139}
   - component: {fileID: 5489020702616953138}
   - component: {fileID: 5489020702616953142}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4879,10 +5038,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1085, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 925, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702616953141
 CanvasRenderer:
@@ -4910,6 +5069,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4919,7 +5080,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702616953139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4948,6 +5108,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -4963,6 +5125,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -4989,6 +5153,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702616953138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5045,6 +5211,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702628131388
 GameObject:
   m_ObjectHideFlags: 0
@@ -5057,7 +5225,7 @@ GameObject:
   - component: {fileID: 5489020702628131360}
   - component: {fileID: 5489020702628131391}
   - component: {fileID: 5489020702628131390}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5110,6 +5278,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -5119,7 +5289,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702628131390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5174,6 +5343,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702663238283
 GameObject:
   m_ObjectHideFlags: 0
@@ -5185,7 +5356,7 @@ GameObject:
   - component: {fileID: 5489020702663238284}
   - component: {fileID: 5489020702663238286}
   - component: {fileID: 5489020702663238285}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5237,6 +5408,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5246,7 +5419,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702701993009
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,7 +5430,7 @@ GameObject:
   - component: {fileID: 5489020702701993010}
   - component: {fileID: 5489020702701993012}
   - component: {fileID: 5489020702701993011}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: SwapSkillPlanelInInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5285,8 +5457,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2000, y: 1500}
+  m_AnchoredPosition: {x: 0.000032425, y: -0.000083923}
+  m_SizeDelta: {x: 1920, y: 1079.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702701993012
 CanvasRenderer:
@@ -5314,6 +5486,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -5323,7 +5497,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702801614241
 GameObject:
   m_ObjectHideFlags: 0
@@ -5338,7 +5511,7 @@ GameObject:
   - component: {fileID: 5489020702801614243}
   - component: {fileID: 5489020702801614242}
   - component: {fileID: 5489020702801614246}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5360,10 +5533,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1565, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1405, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702801614245
 CanvasRenderer:
@@ -5391,6 +5564,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5400,7 +5575,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702801614243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5429,6 +5603,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -5444,6 +5620,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -5470,6 +5648,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702801614242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5526,6 +5706,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702817426117
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,7 +5720,7 @@ GameObject:
   - component: {fileID: 5489020702817426121}
   - component: {fileID: 5489020702817426120}
   - component: {fileID: 5489020702817426119}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Swap Skill Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5591,6 +5773,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -5600,7 +5784,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702817426119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5677,6 +5860,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702818650269
 GameObject:
   m_ObjectHideFlags: 0
@@ -5691,7 +5876,7 @@ GameObject:
   - component: {fileID: 5489020702818650271}
   - component: {fileID: 5489020702818650270}
   - component: {fileID: 5489020702818650242}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5713,10 +5898,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1405, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1245, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702818650241
 CanvasRenderer:
@@ -5744,6 +5929,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5753,7 +5940,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702818650271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5782,6 +5968,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -5797,6 +5985,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -5823,6 +6013,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702818650270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5879,6 +6071,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702832130740
 GameObject:
   m_ObjectHideFlags: 0
@@ -5890,7 +6084,7 @@ GameObject:
   - component: {fileID: 5489020702832130741}
   - component: {fileID: 5489020702832130743}
   - component: {fileID: 5489020702832130742}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5942,6 +6136,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5951,7 +6147,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702837548335
 GameObject:
   m_ObjectHideFlags: 0
@@ -5963,7 +6158,7 @@ GameObject:
   - component: {fileID: 5489020702837548304}
   - component: {fileID: 5489020702837548306}
   - component: {fileID: 5489020702837548305}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6015,6 +6210,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6024,7 +6221,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702855062070
 GameObject:
   m_ObjectHideFlags: 0
@@ -6036,7 +6232,7 @@ GameObject:
   - component: {fileID: 5489020702855062071}
   - component: {fileID: 5489020702855062073}
   - component: {fileID: 5489020702855062072}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6088,6 +6284,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6097,7 +6295,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702882088628
 GameObject:
   m_ObjectHideFlags: 0
@@ -6112,7 +6309,7 @@ GameObject:
   - component: {fileID: 5489020702882088630}
   - component: {fileID: 5489020702882088629}
   - component: {fileID: 5489020702882088633}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6134,10 +6331,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 445, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702882088632
 CanvasRenderer:
@@ -6165,6 +6362,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6174,7 +6373,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702882088630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6203,6 +6401,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -6218,6 +6418,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -6244,6 +6446,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702882088629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6300,6 +6504,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702915582425
 GameObject:
   m_ObjectHideFlags: 0
@@ -6311,7 +6517,7 @@ GameObject:
   - component: {fileID: 5489020702915582426}
   - component: {fileID: 5489020702915582428}
   - component: {fileID: 5489020702915582427}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6363,6 +6569,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6372,7 +6580,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702921098761
 GameObject:
   m_ObjectHideFlags: 0
@@ -6387,7 +6594,7 @@ GameObject:
   - component: {fileID: 5489020702921098763}
   - component: {fileID: 5489020702921098762}
   - component: {fileID: 5489020702921098766}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6409,10 +6616,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1405, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1245, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702921098765
 CanvasRenderer:
@@ -6440,6 +6647,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6449,7 +6658,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702921098763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6478,6 +6686,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -6493,6 +6703,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -6519,6 +6731,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702921098762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6575,6 +6789,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020702927240349
 GameObject:
   m_ObjectHideFlags: 0
@@ -6586,7 +6802,7 @@ GameObject:
   - component: {fileID: 5489020702927240350}
   - component: {fileID: 5489020702927240320}
   - component: {fileID: 5489020702927240351}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6638,6 +6854,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6647,7 +6865,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020702939577845
 GameObject:
   m_ObjectHideFlags: 0
@@ -6660,7 +6877,7 @@ GameObject:
   - component: {fileID: 5489020702939577849}
   - component: {fileID: 5489020702939577848}
   - component: {fileID: 5489020702939577847}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6758,7 +6975,7 @@ GameObject:
   - component: {fileID: 5489020702976130490}
   - component: {fileID: 5489020702976130492}
   - component: {fileID: 5489020702976130491}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Info Description Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6781,8 +6998,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000049591064, y: 0}
-  m_SizeDelta: {x: 2397.7, y: 267.9}
+  m_AnchoredPosition: {x: 0.015106, y: -23.2}
+  m_SizeDelta: {x: 1855.8, y: 178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702976130492
 CanvasRenderer:
@@ -6810,6 +7027,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 48
@@ -6838,7 +7057,7 @@ GameObject:
   - component: {fileID: 5489020702997869443}
   - component: {fileID: 5489020702997869442}
   - component: {fileID: 5489020702997869441}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: ActiveSkillCell (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6860,10 +7079,10 @@ RectTransform:
   m_Father: {fileID: 5489020702100367305}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 620, y: -131.2}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020702997869445
 CanvasRenderer:
@@ -6891,6 +7110,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6900,7 +7121,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020702997869443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6929,6 +7149,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -6944,6 +7166,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -6970,6 +7194,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020702997869442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7029,6 +7255,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703010322841
 GameObject:
   m_ObjectHideFlags: 0
@@ -7040,7 +7268,7 @@ GameObject:
   - component: {fileID: 5489020703010322842}
   - component: {fileID: 5489020703010322844}
   - component: {fileID: 5489020703010322843}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Info Panel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7066,8 +7294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -29.3, y: -1303}
-  m_SizeDelta: {x: 1888.8, y: 383.7}
+  m_AnchoredPosition: {x: -12.8, y: -945}
+  m_SizeDelta: {x: 1855.8, y: 251.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703010322844
 CanvasRenderer:
@@ -7095,6 +7323,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7104,7 +7334,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703059002800
 GameObject:
   m_ObjectHideFlags: 0
@@ -7116,7 +7345,7 @@ GameObject:
   - component: {fileID: 5489020703059002801}
   - component: {fileID: 5489020703059002803}
   - component: {fileID: 5489020703059002802}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7168,6 +7397,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7177,7 +7408,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703070350722
 GameObject:
   m_ObjectHideFlags: 0
@@ -7189,7 +7419,7 @@ GameObject:
   - component: {fileID: 5489020703070350723}
   - component: {fileID: 5489020703070350725}
   - component: {fileID: 5489020703070350724}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7241,6 +7471,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7250,7 +7482,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703080092429
 GameObject:
   m_ObjectHideFlags: 0
@@ -7262,7 +7493,7 @@ GameObject:
   - component: {fileID: 5489020703080092430}
   - component: {fileID: 5489020703080092528}
   - component: {fileID: 5489020703080092431}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7314,6 +7545,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7323,7 +7556,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703103236942
 GameObject:
   m_ObjectHideFlags: 0
@@ -7338,7 +7570,7 @@ GameObject:
   - component: {fileID: 5489020703103237042}
   - component: {fileID: 5489020703103237041}
   - component: {fileID: 5489020703103237040}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7360,10 +7592,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 285, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1565, y: -445}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703103237044
 CanvasRenderer:
@@ -7391,6 +7623,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7400,7 +7634,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703103237042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7429,6 +7662,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -7444,6 +7679,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -7470,6 +7707,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703103237041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7526,6 +7765,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703143486852
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,7 +7781,7 @@ GameObject:
   - component: {fileID: 5489020703143486854}
   - component: {fileID: 5489020703143486853}
   - component: {fileID: 5489020703143486857}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7562,10 +7803,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 925, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 765, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703143486856
 CanvasRenderer:
@@ -7593,6 +7834,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7602,7 +7845,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703143486854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7631,6 +7873,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -7646,6 +7890,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -7672,6 +7918,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703143486853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7728,6 +7976,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703156153293
 GameObject:
   m_ObjectHideFlags: 0
@@ -7739,7 +7989,7 @@ GameObject:
   - component: {fileID: 5489020703156153294}
   - component: {fileID: 5489020703156152880}
   - component: {fileID: 5489020703156153295}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Info Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7765,8 +8015,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -29.3, y: 208.9}
-  m_SizeDelta: {x: 1888.8, y: 383.7}
+  m_AnchoredPosition: {x: -4.225, y: 166.3}
+  m_SizeDelta: {x: 1838.6, y: 250.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703156152880
 CanvasRenderer:
@@ -7794,6 +8044,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7803,7 +8055,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703176426245
 GameObject:
   m_ObjectHideFlags: 0
@@ -7815,7 +8066,7 @@ GameObject:
   - component: {fileID: 5489020703176426246}
   - component: {fileID: 5489020703176426248}
   - component: {fileID: 5489020703176426247}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7867,6 +8118,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7876,7 +8129,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703230932420
 GameObject:
   m_ObjectHideFlags: 0
@@ -7888,7 +8140,7 @@ GameObject:
   - component: {fileID: 5489020703230932421}
   - component: {fileID: 5489020703230932423}
   - component: {fileID: 5489020703230932422}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7940,6 +8192,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7949,7 +8203,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703285285005
 GameObject:
   m_ObjectHideFlags: 0
@@ -7961,7 +8214,7 @@ GameObject:
   - component: {fileID: 5489020703285285006}
   - component: {fileID: 5489020703285285104}
   - component: {fileID: 5489020703285285007}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8013,6 +8266,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8022,7 +8277,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703291868002
 GameObject:
   m_ObjectHideFlags: 0
@@ -8034,7 +8288,7 @@ GameObject:
   - component: {fileID: 5489020703291868003}
   - component: {fileID: 5489020703291868005}
   - component: {fileID: 5489020703291868004}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8086,6 +8340,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8095,7 +8351,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703307559205
 GameObject:
   m_ObjectHideFlags: 0
@@ -8107,7 +8362,7 @@ GameObject:
   - component: {fileID: 5489020703307559206}
   - component: {fileID: 5489020703307559208}
   - component: {fileID: 5489020703307559207}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8159,6 +8414,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 109
@@ -8184,7 +8441,7 @@ GameObject:
   - component: {fileID: 5489020703363896293}
   - component: {fileID: 5489020703363896295}
   - component: {fileID: 5489020703363896294}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8236,6 +8493,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8245,7 +8504,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703369576158
 GameObject:
   m_ObjectHideFlags: 0
@@ -8260,7 +8518,7 @@ GameObject:
   - component: {fileID: 5489020703369576128}
   - component: {fileID: 5489020703369576159}
   - component: {fileID: 5489020703369576131}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8282,10 +8540,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1245, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1085, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703369576130
 CanvasRenderer:
@@ -8313,6 +8571,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8322,7 +8582,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703369576128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8351,6 +8610,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -8366,6 +8627,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -8392,6 +8655,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703369576159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8448,6 +8713,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703378023138
 GameObject:
   m_ObjectHideFlags: 0
@@ -8462,7 +8729,7 @@ GameObject:
   - component: {fileID: 5489020703378023140}
   - component: {fileID: 5489020703378023139}
   - component: {fileID: 5489020703378023143}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8484,10 +8751,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -125}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 445, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703378023142
 CanvasRenderer:
@@ -8515,6 +8782,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8524,7 +8793,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703378023140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8553,6 +8821,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -8568,6 +8838,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -8594,6 +8866,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703378023139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8650,6 +8924,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703382473603
 GameObject:
   m_ObjectHideFlags: 0
@@ -8662,7 +8938,7 @@ GameObject:
   - component: {fileID: 5489020703382473607}
   - component: {fileID: 5489020703382473606}
   - component: {fileID: 5489020703382473605}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Learn Skill Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8715,6 +8991,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -8724,7 +9002,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703382473605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8779,6 +9056,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703396245119
 GameObject:
   m_ObjectHideFlags: 0
@@ -8790,7 +9069,7 @@ GameObject:
   - component: {fileID: 5489020703396245088}
   - component: {fileID: 5489020703396245090}
   - component: {fileID: 5489020703396245089}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8842,6 +9121,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 109
@@ -8870,7 +9151,7 @@ GameObject:
   - component: {fileID: 5489020703410852863}
   - component: {fileID: 5489020703410852862}
   - component: {fileID: 5489020703410852834}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8892,10 +9173,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1565, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1405, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703410852833
 CanvasRenderer:
@@ -8923,6 +9204,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8932,7 +9215,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703410852863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8961,6 +9243,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -8976,6 +9260,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -9002,6 +9288,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703410852862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9058,6 +9346,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703414009311
 GameObject:
   m_ObjectHideFlags: 0
@@ -9070,7 +9360,7 @@ GameObject:
   - component: {fileID: 5489020703414009283}
   - component: {fileID: 5489020703414009282}
   - component: {fileID: 5489020703414009281}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HomeFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9084,7 +9374,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5489020703414009311}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.12, y: 0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9106,7 +9396,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9200,7 +9489,7 @@ GameObject:
   - component: {fileID: 5489020703433394662}
   - component: {fileID: 5489020703433394664}
   - component: {fileID: 5489020703433394663}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9252,6 +9541,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9261,7 +9552,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703481544564
 GameObject:
   m_ObjectHideFlags: 0
@@ -9273,7 +9563,7 @@ GameObject:
   - component: {fileID: 5489020703481544565}
   - component: {fileID: 5489020703481544567}
   - component: {fileID: 5489020703481544566}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9325,6 +9615,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9334,7 +9626,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703485703276
 GameObject:
   m_ObjectHideFlags: 0
@@ -9349,7 +9640,7 @@ GameObject:
   - component: {fileID: 5489020703485703278}
   - component: {fileID: 5489020703485703277}
   - component: {fileID: 5489020703485703249}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9371,10 +9662,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 285, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 125, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703485703248
 CanvasRenderer:
@@ -9402,6 +9693,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9411,7 +9704,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703485703278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9440,6 +9732,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -9455,6 +9749,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -9481,6 +9777,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703485703277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9537,6 +9835,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703532790327
 GameObject:
   m_ObjectHideFlags: 0
@@ -9551,7 +9851,7 @@ GameObject:
   - component: {fileID: 5489020703532790329}
   - component: {fileID: 5489020703532790328}
   - component: {fileID: 5489020703532790332}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9573,10 +9873,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1245, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1085, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703532790331
 CanvasRenderer:
@@ -9604,6 +9904,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9613,7 +9915,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703532790329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9642,6 +9943,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -9657,6 +9960,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -9683,6 +9988,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703532790328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9739,6 +10046,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703541474627
 GameObject:
   m_ObjectHideFlags: 0
@@ -9750,7 +10059,7 @@ GameObject:
   - component: {fileID: 5489020703541474628}
   - component: {fileID: 5489020703541474630}
   - component: {fileID: 5489020703541474629}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Info Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9773,8 +10082,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 276.6, y: 319}
-  m_SizeDelta: {x: 553.2, y: 77.600006}
+  m_AnchoredPosition: {x: 276.6, y: 204}
+  m_SizeDelta: {x: 553.2, y: 86.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703541474630
 CanvasRenderer:
@@ -9802,6 +10111,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 48
@@ -9827,7 +10138,7 @@ GameObject:
   - component: {fileID: 5489020703566208957}
   - component: {fileID: 5489020703566208959}
   - component: {fileID: 5489020703566208958}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: HomeFirePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9856,8 +10167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3237, y: 1821}
+  m_AnchoredPosition: {x: 0.000061035, y: -0.0032959}
+  m_SizeDelta: {x: 1920, y: 1079.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703566208959
 CanvasRenderer:
@@ -9885,6 +10196,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -9894,7 +10207,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703575317972
 GameObject:
   m_ObjectHideFlags: 0
@@ -9906,7 +10218,7 @@ GameObject:
   - component: {fileID: 5489020703575317973}
   - component: {fileID: 5489020703575317975}
   - component: {fileID: 5489020703575317974}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9958,6 +10270,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9967,7 +10281,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703575787663
 GameObject:
   m_ObjectHideFlags: 0
@@ -9979,7 +10292,7 @@ GameObject:
   - component: {fileID: 5489020703575787760}
   - component: {fileID: 5489020703575787762}
   - component: {fileID: 5489020703575787761}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Info Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10002,7 +10315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 276.6, y: 319}
+  m_AnchoredPosition: {x: 276.6, y: 194}
   m_SizeDelta: {x: 553.2, y: 77.600006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703575787762
@@ -10031,6 +10344,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 48
@@ -10059,7 +10374,7 @@ GameObject:
   - component: {fileID: 5489020703585378232}
   - component: {fileID: 5489020703585378231}
   - component: {fileID: 5489020703585378235}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10081,10 +10396,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 285, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 125, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703585378234
 CanvasRenderer:
@@ -10112,6 +10427,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10121,7 +10438,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703585378232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10150,6 +10466,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -10165,6 +10483,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -10191,6 +10511,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703585378231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10247,6 +10569,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703592015218
 GameObject:
   m_ObjectHideFlags: 0
@@ -10258,7 +10582,7 @@ GameObject:
   - component: {fileID: 5489020703592015219}
   - component: {fileID: 5489020703592015221}
   - component: {fileID: 5489020703592015220}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10310,6 +10634,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10319,7 +10645,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703643950993
 GameObject:
   m_ObjectHideFlags: 0
@@ -10331,7 +10656,7 @@ GameObject:
   - component: {fileID: 5489020703643950994}
   - component: {fileID: 5489020703643950996}
   - component: {fileID: 5489020703643950995}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10383,6 +10708,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10392,7 +10719,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703675500063
 GameObject:
   m_ObjectHideFlags: 0
@@ -10407,7 +10733,7 @@ GameObject:
   - component: {fileID: 5489020703675500034}
   - component: {fileID: 5489020703675500033}
   - component: {fileID: 5489020703675500037}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: ActiveSkillCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10429,10 +10755,10 @@ RectTransform:
   m_Father: {fileID: 5489020702100367305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130, y: -131.2}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703675500036
 CanvasRenderer:
@@ -10460,6 +10786,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10469,7 +10797,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703675500034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10498,6 +10825,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -10513,6 +10842,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -10539,6 +10870,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703675500033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10598,6 +10931,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703696851997
 GameObject:
   m_ObjectHideFlags: 0
@@ -10609,7 +10944,7 @@ GameObject:
   - component: {fileID: 5489020703696851998}
   - component: {fileID: 5489020703696851968}
   - component: {fileID: 5489020703696851999}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10661,6 +10996,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10670,7 +11007,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703710554240
 GameObject:
   m_ObjectHideFlags: 0
@@ -10685,7 +11021,7 @@ GameObject:
   - component: {fileID: 5489020703710554242}
   - component: {fileID: 5489020703710554241}
   - component: {fileID: 5489020703710554245}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10707,10 +11043,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1405, y: -285}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1245, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703710554244
 CanvasRenderer:
@@ -10738,6 +11074,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10747,7 +11085,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703710554242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10776,6 +11113,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -10791,6 +11130,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -10817,6 +11158,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703710554241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10873,6 +11216,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703721716237
 GameObject:
   m_ObjectHideFlags: 0
@@ -10884,7 +11229,7 @@ GameObject:
   - component: {fileID: 5489020703721716238}
   - component: {fileID: 5489020703721716336}
   - component: {fileID: 5489020703721716239}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Learn Cell Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10936,6 +11281,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8c9efb6355add18458a9b2b17beed3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10945,7 +11292,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5489020703732649225
 GameObject:
   m_ObjectHideFlags: 0
@@ -10960,7 +11306,7 @@ GameObject:
   - component: {fileID: 5489020703732649227}
   - component: {fileID: 5489020703732649226}
   - component: {fileID: 5489020703732649230}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10982,10 +11328,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 445, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 285, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703732649229
 CanvasRenderer:
@@ -11013,6 +11359,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -11022,7 +11370,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703732649227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11051,6 +11398,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -11066,6 +11415,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -11092,6 +11443,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703732649226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11148,6 +11501,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703732763614
 GameObject:
   m_ObjectHideFlags: 0
@@ -11159,7 +11514,7 @@ GameObject:
   - component: {fileID: 5489020703732763615}
   - component: {fileID: 5489020703732763585}
   - component: {fileID: 5489020703732763584}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Info Cost Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11182,7 +11537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -276.59998, y: -74}
+  m_AnchoredPosition: {x: -276.59998, y: -59}
   m_SizeDelta: {x: 553.19995, y: 77.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703732763585
@@ -11211,6 +11566,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 48
@@ -11239,7 +11596,7 @@ GameObject:
   - component: {fileID: 5489020703736617991}
   - component: {fileID: 5489020703736617990}
   - component: {fileID: 5489020703736617994}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11261,10 +11618,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 445, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703736617993
 CanvasRenderer:
@@ -11292,6 +11649,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -11301,7 +11660,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703736617991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11330,6 +11688,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -11345,6 +11705,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -11371,6 +11733,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703736617990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11427,6 +11791,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5489020703748277455
 GameObject:
   m_ObjectHideFlags: 0
@@ -11438,7 +11804,7 @@ GameObject:
   - component: {fileID: 5489020703748278064}
   - component: {fileID: 5489020703748278066}
   - component: {fileID: 5489020703748278065}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill Info Cost Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11490,6 +11856,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 48
@@ -11518,7 +11886,7 @@ GameObject:
   - component: {fileID: 5489020703796266516}
   - component: {fileID: 5489020703796266515}
   - component: {fileID: 5489020703796266519}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Skill  Cell In Inventory (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11540,10 +11908,10 @@ RectTransform:
   m_Father: {fileID: 5489020701833695037}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1245, y: -445}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1085, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5489020703796266518
 CanvasRenderer:
@@ -11571,6 +11939,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -11580,7 +11950,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5489020703796266516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11609,6 +11978,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -11624,6 +11995,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 4
     callback:
       m_PersistentCalls:
@@ -11650,6 +12023,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &5489020703796266515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11706,3 +12081,5 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null

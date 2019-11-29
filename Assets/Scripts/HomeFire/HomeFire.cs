@@ -16,6 +16,7 @@ public class HomeFire : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)&& _IsPlayerNear)
         {
+            SetLastIndex();
             Use();
         }
     }
@@ -31,10 +32,27 @@ public class HomeFire : MonoBehaviour
                 if (controller.canUseOther)
                 {
                     InfoManager.instance.ShowInfoPanel(type, this.gameObject);
+                    
+
                 }
             }
         }
     }
+
+    private void SetLastIndex()
+    {
+        int index = controller.HomeFirePlaces.IndexOf(this.gameObject.transform);
+        if (index < 0)
+        {
+            controller.HomeFirePlaces.Add(this.gameObject.transform);
+            controller.IndexOfLastHomeFirePosiotion = controller.HomeFirePlaces.IndexOf(this.gameObject.transform);
+        }
+        else
+        {
+            controller.IndexOfLastHomeFirePosiotion = index;
+        }
+    }
+
     void OnTriggerExit2D(Collider2D col)
     {
         _IsPlayerNear = false;

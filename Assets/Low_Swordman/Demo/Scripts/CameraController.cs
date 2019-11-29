@@ -7,7 +7,15 @@ public class CameraController : MonoBehaviour {
     public Vector3 offset;
     void Update()
     {
-        transform.position = Target.transform.position + offset ;
+        if (Target)
+        {
+            transform.position = Target.transform.position + offset;
+        }
+        else
+        {
+            return;
+        }
+        
     }
 
 

@@ -7,6 +7,7 @@ public class Item : ScriptableObject
 {
     [SerializeField] int _Cost = 100;
     public TypeOfAction type = TypeOfAction.PickUp;
+    public TypeOfItem TypeOfItem;
     public string Name;
     [Multiline(10)]
     public string Description="";

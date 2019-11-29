@@ -24,12 +24,15 @@ public class EnemyHealthsystem
     }
     public void TakeDamage(int amount)
     {
+       
         health = Mathf.Clamp(health - amount, 0, healthMax);
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
+        
         if (health <= 0)
         {
             EnemyHealthDownToZero?.Invoke(this, EventArgs.Empty);
         }
+
     }
     public float GetPercent()
     {

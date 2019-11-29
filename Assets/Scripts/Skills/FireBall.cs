@@ -10,18 +10,25 @@ public class FireBall : Skill
     GameObject  Player;
     public override void Use()
     {
-        Player = GameObject.FindWithTag("Player");
-        if ( Controller.instance.system.GetMana() >= ManaCost)
+        if (CurrentCoolDownTimer < CoolDown)
         {
-            Controller.instance.system.minusMana(ManaCost);
-            var fireBall =  Instantiate(FireBallPrefab, Player.transform.position,Player.transform.rotation);
-           // fireBall.GetComponent<Rigidbody2D>().AddForce(Player.transform.right * speed);
-                
+            Debug.Log("CoolDown!");
+            return;
         }
         else
         {
-            Debug.Log("Не хватает маны!");
+            CurrentCoolDownTimer = 0f;
+            Player = GameObject.FindWithTag("Player");
+            if (Controller.instance.system.GetMana() >= ManaCost)
+            {
+                Controller.instance.system.minusMana(ManaCost);
+                var fireBall = Instantiate(FireBallPrefab, Player.transform.position, Player.transform.rotation);
+                // fireBall.GetComponent<Rigidbody2D>().AddForce(Player.transform.right * speed);
+
+            }
         }
+        
+    
     }
  
 

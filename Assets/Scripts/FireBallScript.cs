@@ -15,7 +15,10 @@ public class FireBallScript : MonoBehaviour
         {
 
             if (enemy.gameObject.tag == "Enemy")
+            {
                 enemy.GetComponent<Health>().TakeDamage(damage);
+                Hits.AddHit(enemy.transform.position, damage, Color.red, 1, 1);
+            }
         }
         Destroy(this.gameObject);
     }

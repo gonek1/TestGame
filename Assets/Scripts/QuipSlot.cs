@@ -6,24 +6,23 @@ using UnityEngine.UI;
 
 public class QuipSlot : MonoBehaviour, IPointerClickHandler
 {
-    
-    public GameObject infoPanel;
     public Text Name;
     public Text Description;
     QuipMentManager quipMentManager;
     public Image _image;
-    public Text _text;
-    Quipment _quipment;
-    public QuipmentSlot slot;
+    [SerializeField] Quipment _quipment;
+    public TypeOfItem TypeOfItem;
+    
+
     void Start()
     {
+        
         quipMentManager = QuipMentManager.instance;
     }
     public void AddQuip(Quipment quipment)
     {
 
         _quipment = quipment;
-        _text.gameObject.SetActive(false);
         _image.enabled = true;
         _image.sprite = quipment.Icon;
     }
@@ -32,7 +31,7 @@ public class QuipSlot : MonoBehaviour, IPointerClickHandler
 
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            Controller.instance.equpimentXar.UnSetItem(_quipment);
+            
             ClearSlot();
             
         }
@@ -41,9 +40,9 @@ public class QuipSlot : MonoBehaviour, IPointerClickHandler
     {
         if (_quipment)
         {
+            Controller.instance.equpimentXar.UnSetItem(_quipment);
             _image.sprite = null;
             _image.enabled = false;
-            _text.gameObject.SetActive(true);
             quipMentManager.RemoveQuip(_quipment);
             _quipment = null;
         }
@@ -54,7 +53,6 @@ public class QuipSlot : MonoBehaviour, IPointerClickHandler
         {
             Name.text = _quipment.name;
             Description.text = _quipment.Description;
-            infoPanel.SetActive(true);
         }
         
     }

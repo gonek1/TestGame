@@ -9,7 +9,6 @@ public class Controller : MonoBehaviour
 {
     [Header("Инвентарь")]
     [SerializeField] GameObject Invenotory;
-    [SerializeField] GameObject[] InventoryUI;
     [Space(10)]
     [Header("Способности")]
     [SerializeField] List<Skill> SkillsInInventory = new List<Skill>();
@@ -22,6 +21,9 @@ public class Controller : MonoBehaviour
     [SerializeField] int _armor;
     [Space(10)]
     [Header("Другое")]
+    [SerializeField] List<Transform> homeFirePlaces = new List<Transform>();
+    int indexOfLastHomeFirePosiotion = 0;
+    [SerializeField] GameObject GameOverPanel;
     [SerializeField] Text SoulsText;
     [SerializeField] float TimeBegoreRegenStamina = 1.5f;
     [SerializeField] int NeedStaminaToAttack = 25;
@@ -34,30 +36,83 @@ public class Controller : MonoBehaviour
     bool isOnLadder;
     bool canOpenInv = true;
     bool canMove = true;
+    bool canAttack = true;
     private float HorInp;
     private float VerInp;
     private bool jump = false;
     bool isOpen = false;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] GameObject stats;
+    
     public bool canUseOther { get; set; }
-    public float Speed { get => _speed; set => _speed = value; } 
+    public float Speed { get => _speed; set => _speed = value; }
+    public bool CanAttack { get => canAttack; set => canAttack = value; }
+    public List<Transform> HomeFirePlaces { get => homeFirePlaces; set => homeFirePlaces = value; }
+    public int IndexOfLastHomeFirePosiotion { get => indexOfLastHomeFirePosiotion; set => indexOfLastHomeFirePosiotion = value; }
+
     public HealthSystem system;
     ExpSystem expSystem;
     public PlayerEqupimentXar equpimentXar;
     public MoneySystem moneySystem;
+    void OnEnable()
+    {
+        StopCoroutine(RegenStamina());
+        StartCoroutine(RegenStamina());
+    }
     void Start()
     {
         equpimentXar = new PlayerEqupimentXar(_damage,_armor);
         canUseOther = true;
-        StartCoroutine(RegenStamina());
         expSystem = GetComponent<ExpSystem>();
         system = new HealthSystem(150, 50, 100);
+        system.TakeDamageEvent += TakeDamage;
+        system.HealthDownToZero += System_HealthDownToZero;
         controller2D = GetComponent<CharacterController2D>();
         healthDisplay.Setup(system);
         animator = GetComponent<Animator>();
         moneySystem = new MoneySystem(0, SoulsText);
     }
+
+    private void System_HealthDownToZero(object sender, System.EventArgs e)
+    {
+        animator.SetTrigger("death");
+        SetMove(false);
+        canOpenInv = false;
+        BoxCollider2D bc = GetComponent<BoxCollider2D>();
+        bc.enabled = false;
+        rb.bodyType = RigidbodyType2D.Static;
+
+    }
+    public void Respawn()
+    {
+        BoxCollider2D bc = GetComponent<BoxCollider2D>();
+        bc.enabled = true;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        this.gameObject.SetActive(true);
+        system.FullHeal();
+        FindClosethesHomeFire();
+        animator.SetTrigger("awake");
+        SetMove(true);
+        canOpenInv = true;
+    }
+    public void DestroyPlayer()
+    {
+        
+        GameOverPanel.SetActive(true);
+        this.gameObject.SetActive(false);
+
+    }
+    public void FindClosethesHomeFire()
+    {
+        GameOverPanel.SetActive(false);
+        transform.position = HomeFirePlaces[IndexOfLastHomeFirePosiotion].position;
+    }
+
+    private void TakeDamage(object sender, System.EventArgs e)
+    {
+        animator.SetTrigger("damage");
+    }
+
     void Awake()
     {
         instance = this;
@@ -67,9 +122,13 @@ public class Controller : MonoBehaviour
         Collider2D[] enemys = Physics2D.OverlapCircleAll(new Vector2(attackPlace.position.x, attackPlace.position.y), Radius);
         foreach (var enemy in enemys)
         {
-           
+
             if (enemy.gameObject.tag == "Enemy")
-                enemy.GetComponent<Health>().TakeDamage((int)equpimentXar.basicDamage);
+            {
+                int damage = equpimentXar.totalDamage;
+                Hits.AddHit(attackPlace.position, damage, Color.red, 1, 1);
+                enemy.GetComponent<Health>().TakeDamage(damage);
+            }
         }
         system.minusStamina(NeedStaminaToAttack);
     }
@@ -103,19 +162,15 @@ public class Controller : MonoBehaviour
             {
                 canUseOther = false;
                 Invenotory.SetActive(true);
-                stats.SetActive(false);
-                foreach (var item in InventoryUI)
-                {
-                    item.SetActive(true);
-                }
                 SetMove(false);
+                canAttack = false;
             }
             else if (!isOpen)
             {
                 canUseOther = true;
                 Invenotory.SetActive(false);
-                stats.SetActive(false);
                 SetMove(true);
+                canAttack = true;
             }
         }
         animator.SetFloat("speed", Mathf.Abs(HorInp));
@@ -133,7 +188,7 @@ public class Controller : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(0) && canMove)
+        if (Input.GetMouseButtonDown(0) && canMove && CanAttack)
         {
             if (system.GetStamina() > NeedStaminaToAttack)
             {

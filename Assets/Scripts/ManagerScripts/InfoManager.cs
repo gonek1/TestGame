@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public enum TypeOfAction
 {
     Use,
-    PickUp
+    PickUp,
+    Dialog
 }
 public class InfoManager : MonoBehaviour
 {
@@ -32,6 +33,15 @@ public class InfoManager : MonoBehaviour
         NotificationText.text = "Press E to pick Up";
         PanelInfo.SetActive(true);
         ItemName.text = item.Name;
+    }
+    public void ShowInfoPanel(TypeOfAction action)
+    {
+        if (action == TypeOfAction.Dialog)
+        {
+            NotificationText.text = "Press E to talk";
+            PanelInfo.SetActive(true);
+        }
+        
     }
     public void ShowInfoPanel(TypeOfAction type, GameObject game)
     {

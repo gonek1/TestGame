@@ -12,28 +12,26 @@ public class QuipMentManager : MonoBehaviour
     }
     #endregion
     
-    [SerializeField]Transform parentOfInventorySlot;
-    Inventory inventory;
-    Quipment[] currentQuipment;
+    [SerializeField]Transform parentOfInventorySlot;// инвентарь
+    Inventory inventory;// скрипт инвентаря
+    [SerializeField]Quipment[] currentQuipment;//экипировка
     QuipSlot[] QuipSLots;
     public Transform parent;
     void Start()
     {
         QuipSLots =parent.GetComponentsInChildren<QuipSlot>();
         inventory = Inventory.instance;
-        int  numSlot = System.Enum.GetNames(typeof(QuipmentSlot)).Length;
-        currentQuipment = new Quipment[numSlot];
+        currentQuipment = new Quipment[6];
     }
     public void QuipItem(Quipment newItem, int _index)
     {
         Quipment oldItem = null;
-        int slotIndex = (int)newItem.slot;
-       
+        int slotIndex = (int)newItem.TypeOfItem;
         inventory.RemoveItem(_index);
         parentOfInventorySlot.GetChild(_index).GetComponent<InventorySlot>().ClearSlot();
         for (int i = 0; i < QuipSLots.Length; i++)
         {
-            if (QuipSLots[i].slot == newItem.slot)
+            if (QuipSLots[i].TypeOfItem == newItem.TypeOfItem)
             {
                 QuipSLots[i].AddQuip(newItem);
             }
@@ -51,7 +49,7 @@ public class QuipMentManager : MonoBehaviour
     }
     public void RemoveQuip(Quipment quipment)
     {
-        int slotIndex = (int)quipment.slot;
+        int slotIndex = (int)quipment.TypeOfItem;
         currentQuipment[slotIndex] = null;
         inventory.AddItem(quipment);
     }
