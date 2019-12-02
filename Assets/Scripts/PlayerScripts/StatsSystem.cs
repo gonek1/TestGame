@@ -109,6 +109,8 @@ public class StatsSystem : MonoBehaviour
     }
     public void Refresh()
     {
+        _TotalArmor.text = controller.equpimentXar.totalArmor.ToString();
+        _MaxAttackDamage.text = controller.equpimentXar.totalDamage.ToString();
         _LvlText.text = expSystem.currentlvl.ToString();
         _FreeLvlPointsText.text = _FreeLvlPoints.ToString();
         _FreeSouls.text = controller.moneySystem.ReturnSoulsCount().ToString();

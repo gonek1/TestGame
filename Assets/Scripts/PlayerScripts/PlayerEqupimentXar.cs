@@ -24,62 +24,26 @@ public class PlayerEqupimentXar
     }
     public void UnSetItem( Quipment item)
     {
-        if (item.TypeOfItem == TypeOfItem.Weapon)
-        {
-            weapomAttack -= item._damageMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Chest)
-        {
-            chestArmor -= item._chestrMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Feet)
-        {
-            feetArmor -= item._feetMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Head)
-        {
-            headArmor -= item._headrMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Legs)
-        {
-            legsArmor -= item._legsMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Shield)
-        {
-            shieldArmor -= item._shieldMod;
-        }
+        weapomAttack -= item._damageMod;
+        chestArmor -= item._chestrMod;
+        feetArmor -= item._feetMod;
+        headArmor -= item._headrMod;
+        legsArmor -= item._legsMod;
+        shieldArmor -= item._shieldMod;
         totalArmor = basicArmor + shieldArmor + legsArmor + headArmor + feetArmor + chestArmor;
-        totalDamage = basicDamage;
+        totalDamage -= item._damageMod;
         OnItemChanged?.Invoke(this, EventArgs.Empty);
     }
     public void SetStatsFromItem( Quipment item)
     {
-        if (item.TypeOfItem == TypeOfItem.Weapon)
-        {
-            weapomAttack = item._damageMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Chest)
-        {
-            chestArmor = item._chestrMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Feet)
-        {
-            feetArmor = item._feetMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Head)
-        {
-            headArmor = item._headrMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Legs)
-        {
-            legsArmor = item._legsMod;
-        }
-        else if (item.TypeOfItem == TypeOfItem.Shield)
-        {
-            shieldArmor = item._shieldMod;
-        }
+        weapomAttack = item._damageMod;
+        chestArmor = item._chestrMod;
+        feetArmor = item._feetMod;
+        headArmor = item._headrMod;
+        legsArmor = item._legsMod;
+        shieldArmor = item._shieldMod;
         totalArmor = basicArmor + shieldArmor + legsArmor + headArmor + feetArmor + chestArmor;
-        totalDamage = basicDamage + weapomAttack;
+        totalDamage += weapomAttack;
         OnItemChanged?.Invoke(this, EventArgs.Empty);
 
     }

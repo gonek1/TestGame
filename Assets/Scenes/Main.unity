@@ -23473,7 +23473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203afeb6b6d9ca34091a33c9f8a59b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Invenotory: {fileID: 1789296410}
   SkillsInInventory:
   - {fileID: 11400000, guid: d2e6c5f8d9a285f43b97950b9c4ae18b, type: 2}
   ActiveSkills:
@@ -23546,11 +23545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae91528177df954ab2f1061223d4719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   itemsParent: {fileID: 599846791}
   slots: []
   space: 35
@@ -23590,6 +23584,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  inventoryItem: {fileID: 1789296410}
+  InventoryGameObjects:
+  - {fileID: 526908469}
+  - {fileID: 1678494850}
+  - {fileID: 599846790}
+  - {fileID: 135934681}
+  - {fileID: 1529534670}
 --- !u!114 &1919035728
 MonoBehaviour:
   m_ObjectHideFlags: 0

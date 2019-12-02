@@ -7,9 +7,6 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
-    [Header("Инвентарь")]
-    [SerializeField] GameObject Invenotory;
-    [Space(10)]
     [Header("Способности")]
     [SerializeField] List<Skill> SkillsInInventory = new List<Skill>();
     public Skill[] ActiveSkills = new Skill[3];
@@ -110,6 +107,7 @@ public class Controller : MonoBehaviour
 
     private void TakeDamage(object sender, System.EventArgs e)
     {
+        Inventory.instance.CloseInventory();
         animator.SetTrigger("damage");
     }
 
@@ -160,17 +158,11 @@ public class Controller : MonoBehaviour
             isOpen = !isOpen;
             if (isOpen)
             {
-                canUseOther = false;
-                Invenotory.SetActive(true);
-                SetMove(false);
-                canAttack = false;
+                Inventory.instance.OpenInventory();
             }
             else if (!isOpen)
             {
-                canUseOther = true;
-                Invenotory.SetActive(false);
-                SetMove(true);
-                canAttack = true;
+                Inventory.instance.CloseInventory();
             }
         }
         animator.SetFloat("speed", Mathf.Abs(HorInp));
@@ -298,7 +290,6 @@ public class Controller : MonoBehaviour
     {
         Skills[index].transform.GetComponent<SkillSlot>().AddSkill(skill);
         ActiveSkills[index] = skill;
-       // Skills[index].transform.GetComponent<SkillSlot>().Refresh();
     }
     public void RemoveSkillFromInvenory(Skill skill)
     {

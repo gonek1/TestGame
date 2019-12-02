@@ -7,7 +7,6 @@ using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
-    public UnityEvent OnLandEvent;
     #region Singlton
     public static Inventory instance;
     void Awake()
@@ -19,15 +18,15 @@ public class Inventory : MonoBehaviour
         }
         instance = this;
     }
-    #endregion
-    
+    #endregion   
     [SerializeField] Transform itemsParent;
     public InventorySlot[] slots;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallBack;
     [SerializeField] int space = 20;
     [SerializeField] List<Item> items = new List<Item>();
-
+    [SerializeField] GameObject inventoryItem;
+    [SerializeField] GameObject[] InventoryGameObjects;
     private void Start()
     {
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
@@ -156,6 +155,32 @@ public class Inventory : MonoBehaviour
                 slots[i].AddItem(itemForOder[i]);
             }
         }
+    }
+    public void OpenInventory()
+    {
+        for (int i = 0; i < InventoryGameObjects.Length; i++)
+        {
+            if (i!=3)
+            {
+                InventoryGameObjects[i].SetActive(true);
+            }
+            else
+            {
+                InventoryGameObjects[i].SetActive(false);
+            }
+        }
+        ShowAllItems();
+        Controller.instance.canUseOther = false;
+        inventoryItem.SetActive(true);
+        Controller.instance.SetMove(false);
+        Controller.instance.CanAttack = false;
+    }
+    public void CloseInventory()
+    {
+        Controller.instance.canUseOther = true;
+        inventoryItem.SetActive(false);
+        Controller.instance.SetMove(true);
+        Controller.instance.CanAttack = true;
     }
 }
 public enum TypeOfItem
