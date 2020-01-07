@@ -28,7 +28,7 @@ public class InfoManager : MonoBehaviour
     {
         
     }
-    public void ShowInfoPanel(Item item)
+    public void ShowInfoPanel(abstractItem item)
     {
         NotificationText.text = "Press E to pick Up";
         PanelInfo.SetActive(true);
@@ -56,7 +56,7 @@ public class InfoManager : MonoBehaviour
         PanelInfo.SetActive(false);
     }
 
-    public void ShowNotification(Item item)
+    public void ShowNotification(abstractItem item)
     {
         var cell =  Instantiate(NotPrebaf, Content.transform);
         cell.transform.GetChild(0).GetComponent<Text>().text = "You picked  " + item.Name;

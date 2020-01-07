@@ -9,18 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d1a0b39478ab504fbc864bbaffcd9f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4539d92e0476c7746af239da1c4bef3f, type: 3}
   m_Name: Sword of Destiny
   m_EditorClassIdentifier: 
   _Cost: 100
   type: 1
-  TypeOfItem: 3
+  rarity: 3
   Name: Sword of Destiny
-  Description: "\u0412\u0441\u0435\u043C\u043E\u0433\u0443\u0449\u0438\u0439 \u043C\u0435\u0447"
-  Icon: {fileID: 21300000, guid: 066cc7941702be2409b4c86b8dac4ea9, type: 3}
-  _shieldMod: 0
-  _damageMod: 5
-  _headrMod: 0
-  _chestrMod: 0
-  _feetMod: 0
-  _legsMod: 0
+  Description: "\u0411\u043B\u0430 \u0431\u043B\u0430 \u0431\u043B\u0430"
+  Icon: {fileID: 21300000, guid: f594bf2df7f5c264f96b77d4c5537436, type: 3}
+  damageMod: 10

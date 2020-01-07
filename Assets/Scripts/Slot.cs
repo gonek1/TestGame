@@ -32,7 +32,7 @@ public class Slot : MonoBehaviour
     { 
 
     }
-    public virtual void AddItem(Item item)
+    public virtual void AddItem(abstractItem item)
     {
 
     }

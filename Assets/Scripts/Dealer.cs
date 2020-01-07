@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Dealer : MonoBehaviour
 {
-    [SerializeField] List<Item> items = new List<Item>();
+    [SerializeField] List<abstractItem> items = new List<abstractItem>();
     [SerializeField] Transform content;
     [SerializeField] GameObject ShopPanel;
     [SerializeField] Text description;

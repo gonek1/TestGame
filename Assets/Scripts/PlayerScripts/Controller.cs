@@ -39,7 +39,7 @@ public class Controller : MonoBehaviour
     private bool jump = false;
     bool isOpen = false;
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] GameObject stats;
+    
     
     public bool canUseOther { get; set; }
     public float Speed { get => _speed; set => _speed = value; }
@@ -158,7 +158,7 @@ public class Controller : MonoBehaviour
             isOpen = !isOpen;
             if (isOpen)
             {
-                Inventory.instance.OpenInventory();
+                Inventory.instance.OpenInventory(1);
             }
             else if (!isOpen)
             {

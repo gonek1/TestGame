@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 43a7d98bd4222b64e933596512dc09ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de5cbe52c1abb8f40becb069449d9e12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -163,7 +163,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9050642728170947786}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -190,12 +190,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemPrefab: {fileID: 6781898377035469493, guid: f51a3476eb539944e93df3d88c026160,
     type: 3}
-  infoPanel: {fileID: 0}
   Name: {fileID: 0}
   Description: {fileID: 0}
   IndexSlot: 0
   playerPosToDrop: {fileID: 0}
   icon: {fileID: 9050642728416606281}
+  stats: {fileID: 0}
 --- !u!61 &9050642728170947784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -252,6 +252,23 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9050642728170947767}
+          m_MethodName: ClearInfoPanel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, Unity.ugui,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &9050642728416606283
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,8 +303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.13, y: 0.27}
-  m_SizeDelta: {x: 103.07, y: 101.3}
+  m_AnchoredPosition: {x: -0.6, y: -0.57}
+  m_SizeDelta: {x: 89.55, y: 86.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9050642728416606280
 CanvasRenderer:
@@ -317,7 +334,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 683e7d9d6853b8a4b9dbe41a0be44b5c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

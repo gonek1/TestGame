@@ -35,7 +35,7 @@ public class TalantManager : MonoBehaviour
     public void QuipTalant(Talant _talant, int _index)
     {
         Talant oldTalant = null;
-        inventory.RemoveItem(_index);
+       // inventory.RemoveItem(_index);
         parentOfInventorySlot.GetChild(_index).GetComponent<InventorySlot>().ClearSlot();
         if (Talslot._talant != null)
         {

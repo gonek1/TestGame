@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead21c6b332b9144ebbe1d19711b8e82, type: 3}
+  m_Name: New Blueprint 1
+  m_EditorClassIdentifier: 
+  _Cost: 100
+  type: 1
+  rarity: 1
+  Name: "\u0427\u0435\u0440\u0442\u0435\u0436 \u0440\u0443\u043A\u043E\u0432\u0438\u0446"
+  Description: fergregerge
+  Icon: {fileID: 21300000, guid: e85a4f4a40f9cca409993136dabd3bcc, type: 3}
+  FinalItem: {fileID: 11400000, guid: 6b095b5d21707104f93c948b2ff0f6d5, type: 2}
+  ItemsNeedForCraft:
+  - {fileID: 11400000, guid: 11229ed398a86814083eb0c3573139a9, type: 2}
+  - {fileID: 11400000, guid: 11229ed398a86814083eb0c3573139a9, type: 2}
+  - {fileID: 11400000, guid: f96db8aaeeb8f22429fbabb75e0525b8, type: 2}

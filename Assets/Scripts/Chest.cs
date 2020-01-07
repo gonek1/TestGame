@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class Chest : MonoBehaviour
 {
     Controller controller;
-    public RectTransform Chestinventory;
-    public List<Item> Items;
+    public List<abstractItem> Items;
     [SerializeField] bool isNear;
     ChestManager chestManager;
     void Start()
@@ -19,34 +18,36 @@ public class Chest : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
             controller = col.gameObject.GetComponent<Controller>();
-            
             isNear = true;
     }
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
+        {
             isNear = false;
-            controller.SetMove(true);
-            controller.SetOpenInv(true);
-            chestManager.UnRender();
-            CloseChest();
+            Close();
+        }
     }
+
+    public void Close()
+    {
+        controller.SetMove(true);
+        controller.SetOpenInv(true);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)&&isNear)
         {
             
-            if (!Chestinventory.gameObject.activeSelf)
+            if (!chestManager.IsOpen())
             {
                 controller.SetMove(false);
                 controller.SetOpenInv(false);
                 OpenChest();
-                chestManager.Render(Items,this);
             }
             else
             {
-                CloseChest();
-                chestManager.UnRender();
                 controller.SetMove(true);
                 controller.SetOpenInv(true);
             }
@@ -54,14 +55,13 @@ public class Chest : MonoBehaviour
     }
     void OpenChest()
     {
-        Chestinventory.gameObject.SetActive(true);
+        chestManager.Render(Items, this);
+        chestManager.OpenChest();
     }
-    void CloseChest()
-    {
-        Chestinventory.gameObject.SetActive(false);
-    }
+    
     public void DestroyItSelf()
     {
+        Close();
         Destroy(gameObject);
     }
 }

@@ -6,7 +6,7 @@ public class ItemPick : MonoBehaviour
 {
     InfoManager infoManager;
     bool IsNear;
-    public Item Item;
+    public abstractItem Item;
     void Start()
     {
         infoManager = InfoManager.instance;

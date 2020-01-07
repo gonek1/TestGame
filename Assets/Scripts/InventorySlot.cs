@@ -6,21 +6,18 @@ using TMPro;
 
 public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler, IDragHandler,*/
     IPointerClickHandler
-{
+{   
     public GameObject ItemPrefab;
-    public Text Name;
-    public Text Description;
     public int IndexSlot;
     public Transform playerPosToDrop;
     protected Inventory inventory;
     protected ChestManager chestManager;
-    protected Item item;
+    protected abstractItem item;
     public Image icon;
-    [SerializeField] TextMeshProUGUI stats;
     
-    public virtual void AddItem(Item _item)
+    public virtual void AddItem(abstractItem _item)
     {
-        
+        //Debug.Log(transform.GetSiblingIndex());
         item = _item;
         icon.enabled = true;
         icon.sprite = _item.Icon;
@@ -32,9 +29,8 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
     }
     void Start()
     {
-       // stats.text = "Test <color=green>Test</color>";
         chestManager = ChestManager.instance;
-       IndexSlot = transform.GetSiblingIndex();
+        IndexSlot = transform.GetSiblingIndex();
         inventory = Inventory.instance;
     }
  
@@ -45,7 +41,7 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
             icon.sprite = null;
             icon.enabled = false;
             
-            inventory.RemoveItem(IndexSlot);
+            inventory.RemoveItem(item);
             item = null;
             ClearInfoPanel();
         }
@@ -68,36 +64,42 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
     }
     public virtual void OnPointerClick(PointerEventData eventData)
     {
-       
+
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            SpawnItem();
-            ClearSlot();
+            if (item !=null)
+            {
+                SpawnItem();
+                ClearSlot();
+            }
+            
         }
         else if (eventData.button == PointerEventData.InputButton.Left)
         {
-            if (item)
-                item.Use(IndexSlot);
+            if (item!=null)
+            {          
+               FastItemManager.instance.OutLineBorder(item);
+               ClearSlot();
+                //item.Use(IndexSlot); 
+            }
+            
         }
 
     }
     public void ShowInfoPanel()
     {
-        if (item)
+        if (item !=null)
         {
-            Name.text = item.name;
-            Description.text = item.Description;
-        }
-        else if (!item)
-        {
-            ClearInfoPanel();
+            inventory.CompareItem(item);
         }
     }
     public void ClearInfoPanel()
     {
-        Name.text = null;
-        Description.text = null;
+        inventory.ClearInfoPanel();
     }
 
-
+    public void Test()
+    {
+        Debug.Log("Test");
+    }
 }

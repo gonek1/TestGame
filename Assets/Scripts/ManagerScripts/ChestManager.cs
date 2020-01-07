@@ -19,26 +19,29 @@ public class ChestManager : MonoBehaviour
     }
 
     #endregion
-    public Chest _chest;
+    [SerializeField] GameObject ChestPanelUI;
     public Transform content;
     public GameObject CellPrebaf;
-    public List<Item> items;
+    public List<abstractItem> items;
+    private Chest _chest;
+
     void Start()
     {
         
     }
 
-    public void Render(List<Item> _items,Chest chest)
+    public void Render(List<abstractItem> _items,Chest chest)
     {
+        UnRender();
         _chest = chest;
         for (int i = 0; i < _items.Count; i++)
         {
             var Cell =  Instantiate(CellPrebaf, content.transform);
-            Cell.GetComponent<Chestslot>().AddItem(_items[i]);
+            Cell.GetComponent<ChestPrefab>().AddItem(_items[i]);
         }
 
     }
-    public void RemoveItemFromChest(Item item)
+    public void RemoveItemFromChest(abstractItem item)
     {
         _chest.Items.Remove(item);
     }
@@ -46,14 +49,35 @@ public class ChestManager : MonoBehaviour
     {
         for (int i = 0; i < content.childCount; i++)
         {
-            
-            content.GetChild(i).GetComponent<InventorySlot>().DestroyItSelf();
+            content.GetChild(i).GetComponent<ChestPrefab>().DestroyItem();
         }
         items.Clear();
+    }
+    public void OpenChest()
+    {
+        ChestPanelUI.SetActive(true);
+    }
+    public void CloseChest()
+    {
+        ChestPanelUI.SetActive(false);
+        _chest.Close();
         
     }
-    void Update()
+    public bool IsOpen()
     {
-        
+        return ChestPanelUI.activeSelf;
+    }
+    public void TakeAllItems()
+    {
+        for (int i = 0; i < content.childCount; i++)
+        {
+            Inventory.instance.AddItem(content.GetChild(i).GetComponent<ChestPrefab>().item);
+            RemoveItemFromChest(content.GetChild(i).GetComponent<ChestPrefab>().item);
+            content.GetChild(i).GetComponent<ChestPrefab>().DestroyItem();
+
+        }
+        CloseChest();
+        _chest.DestroyItSelf();
+        _chest = null;
     }
 }

@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Quipment", menuName = "Inventory/HealthPotions")]
-public class HealPoison : Item
+[CreateAssetMenu(fileName = "New Potion", menuName = "Inventory/Potion")]
+public class Potion : abstractItem
 {
+    public TypeOfPotion typeOfRegen;
     [SerializeField] int numberOfHeal;
-    public override void Use(int IndexSlot)
+    public override void Use()
     {
-        base.Use(IndexSlot);
-        if (Controller.instance.system.GetPercent() !=1)
-        {
-            Controller.instance.system.Heal(numberOfHeal);
-            Inventory.instance.RemoveItem(IndexSlot);
-            Inventory.instance.slots[IndexSlot].ClearSlot();
-        }
+        
         
     }
 }

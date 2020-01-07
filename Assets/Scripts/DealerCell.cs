@@ -8,13 +8,13 @@ public class DealerCell : Slot, IPointerClickHandler
     [SerializeField] GameObject ToolTipPrebaf;
     [SerializeField] Text description;
     [SerializeField] Text ItemCost;
-    private Item item;
+    private abstractItem item;
     private Inventory inventory;
     void Start()
     {
         inventory = Inventory.instance;
     }
-    public override void AddItem(Item _item)
+    public override void AddItem(abstractItem _item)
     {
         item = _item;
         UiIcon.enabled = true;
@@ -55,25 +55,31 @@ public class DealerCell : Slot, IPointerClickHandler
     }
     void BuyItem()
     {
-        if (Controller.instance.moneySystem.ReturnSoulsCount() >= item.Cost)
+        if (item)
         {
-            Controller.instance.moneySystem.SpendSouls(item.Cost);
-        }
-        else
-        {
-            Debug.Log("Dont enough souls!");
-            return;
+            if (Controller.instance.moneySystem.ReturnSoulsCount() >= item.Cost)
+            {
+                Controller.instance.moneySystem.SpendSouls(item.Cost);
 
-        }
-        bool wasBought = inventory.AddItem(item);
-        if (wasBought)
-        {
-            DestroyItSelf();
-            ClosePanel();
-        }
-        else
-        {
-            Debug.Log("Not Enough Slot InInventory");
+            }
+            else
+            {
+                Debug.Log("Dont enough souls!");
+                return;
+
+            }
+            bool wasBought = inventory.AddItem(item);
+            if (wasBought)
+            {
+                DestroyItSelf();
+                ClosePanel();
+                item = null;
+               
+            }
+            else
+            {
+                Debug.Log("Not Enough Slot InInventory");
+            }
         }
     }
 }
