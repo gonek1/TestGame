@@ -24,13 +24,7 @@ public class FastItemCell : MonoBehaviour, IPointerClickHandler
     }
     public void Insert()
     {
-        if (Inventory.instance.IsOpen() && FastItemManager.instance.Item != null)
-        {
-            AddItem(FastItemManager.instance.Item);
-            FastItemManager.instance.Item = null;
-            FastItemManager.instance.DisableBorder();
-            FastItemManager.instance.RenderIcons();
-        }
+        
     }
     public virtual void OnPointerClick(PointerEventData eventData)
     {

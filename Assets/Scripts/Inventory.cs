@@ -19,8 +19,15 @@ public class Inventory : MonoBehaviour
             return;
         }
         instance = this;
+        Inputs = new Actions();
+        Inputs.Player.SwapCell.performed += SwapCell;
     }
-    #endregion   
+
+    private void SwapCell(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        throw new System.NotImplementedException();
+    }
+    #endregion
     [SerializeField] Transform itemsParent;
     public InventorySlot[] slots;
     public delegate void OnItemChanged();
@@ -32,8 +39,10 @@ public class Inventory : MonoBehaviour
     [SerializeField] TextMeshProUGUI Name;
     [SerializeField] TextMeshProUGUI Description;
     [SerializeField] TextMeshProUGUI Stats;
+    [SerializeField] TextMeshProUGUI RarityText;
     [SerializeField] Image Rarity;
-
+    Actions Inputs;
+    
     public List<abstractItem> Items { get => items; set => items = value; }
 
     private void Start()
@@ -80,15 +89,16 @@ public class Inventory : MonoBehaviour
 
 
     }
-    public void RemoveItem(abstractItem item)
+    public void RemoveItemFromCraft(abstractItem item)
     {
         int index = Items.IndexOf(item);
         Items[index] = null;
         slots[index].ClearSlot();
     }
-    public void Raplace(abstractItem firstItem, abstractItem secondItem)
+    public void RemoveItemForTime(int index)
     {
-
+        Items[index] = null;
+        slots[index].ClearSlotNotFull();
     }
     //public void OrderByType(int type)
     //{
@@ -119,11 +129,11 @@ public class Inventory : MonoBehaviour
     //}
     public void OnEnable()
     {
-        
+        Inputs.Player.SwapCell.Enable();
     }
     public void OnDisable()
     {
-
+        Inputs.Player.SwapCell.Disable();
     }
 
     public void ShowAllItems()
@@ -208,77 +218,105 @@ public class Inventory : MonoBehaviour
         if (item is Quipment)
         {
             Quipment ITEM = item as Quipment;
-            int x = ITEM.defenceMof -Controller.instance.equpimentXar.quipmentArmor;
+            int x = ITEM.defenceMof - Controller.instance.equpimentXar.quipmentArmor;
             if (x < 0)
-            {
-                
-                colorText = "red";
-            }
-            else if( x >0)
             {
 
-                colorText = "green";
-            }
-            else if (x ==0)
-            {
-               
-                colorText = "white";
-            }
-            description += "Броня : " +"<color=" + colorText +">" + x + "</color>";
-        }
-        else if (item is Weapon)
-        {
-            Weapon ITEM = item as Weapon;
-            int x = ITEM.damageMod - Controller.instance.equpimentXar.weapomAttack ;
-            if (x < 0)
-            { 
                 colorText = "red";
             }
             else if (x > 0)
             {
-               
+
                 colorText = "green";
             }
             else if (x == 0)
             {
-                
+
+                colorText = "white";
+            }
+            description += "Броня : " + "<color=" + colorText + ">" + x + "</color>";
+        }
+        else if (item is Weapon)
+        {
+            Weapon ITEM = item as Weapon;
+            int x = ITEM.damageMod - Controller.instance.equpimentXar.weapomAttack;
+            if (x < 0)
+            {
+                colorText = "red";
+            }
+            else if (x > 0)
+            {
+
+                colorText = "green";
+            }
+            else if (x == 0)
+            {
+
                 colorText = "white";
             }
 
             description += "Урон : " + "<color=" + colorText + ">" + x + "</color>";
         }
-        if (item.rarity == TypeOfRarity.common)
-        {
-            Rarity.color = Color.white;
-        }
-        else  if (item.rarity == TypeOfRarity.rare)
-        {
-            Rarity.color = Color.blue;
-        }
-        else if (item.rarity == TypeOfRarity.epic)
-        {
-            Rarity.color = new Color(128, 0, 128);
-        }
-        else if (item.rarity == TypeOfRarity.legendary)
-        {
-            Rarity.color = Color.yellow;
-        }
-        else if(item.rarity == TypeOfRarity.legendary)
-        {
-            Rarity.color = new Color(255, 140, 0);
-        }
+        RarityText.text = item.rarity.ToString();
+        Rarity.color = ReturnRarirtColor(item);
         Stats.text = description;
         Name.text = item.Name;
         Description.text = item.Description;
     }
+
+    private Color ReturnRarirtColor(abstractItem item)
+    {
+        Color color = new Color();
+        if (item.rarity == TypeOfRarity.common)
+        {
+            color = Color.white;
+        }
+        else if (item.rarity == TypeOfRarity.rare)
+        {
+            color = Color.blue;
+        }
+        else if (item.rarity == TypeOfRarity.epic)
+        {
+            color = new Color(128, 0, 128);
+        }
+        else if (item.rarity == TypeOfRarity.legendary)
+        {
+            color = Color.yellow;
+        }
+        else if (item.rarity == TypeOfRarity.legendary)
+        {
+            color = new Color(255, 140, 0);
+        }
+        return color;
+    }
+
     public void ClearInfoPanel()
     {
         Stats.text = null;
         Name.text = null;
         Description.text = null;
+        RarityText.text = null;
         Rarity.color = Color.white;
         
     }
+    public void ShowInfoAboutItem(abstractItem item)
+    {
+        if (item is Weapon)
+        {
+            Weapon weapon = item as Weapon;
+            Stats.text = "Урон " + weapon.damageMod;
+        }
+        else if (item is Quipment)
+        {
+            Quipment weapon = item as Quipment;
+            Stats.text = "Броня " + weapon.defenceMof;
+        }
+        RarityText.text = item.rarity.ToString();
+        Name.text = item.name;
+        Description.text = item.Description;
+        Rarity.color = ReturnRarirtColor(item);
+    }
+    
 }
 public enum TypeOfQuipSlot
 {

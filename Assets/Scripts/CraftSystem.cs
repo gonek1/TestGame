@@ -68,18 +68,44 @@ public class CraftSystem : MonoBehaviour
     }
     public void ShowInfoAboutItem(Blueprint item)
     {
-        des.text = item.Description;
-        Icon.sprite = item.Icon;
+        des.text = item.FinalItem.Description;
+        Icon.sprite = item.FinalItem.Icon;
         name.text = item.FinalItem.Name;
     }
     public void CraftItem()
     {
         for (int i = 0; i < item.ItemsNeedForCraft.Length; i++)
         {
-            Inventory.instance.RemoveItem(item.ItemsNeedForCraft[i]);
+          Inventory.instance.RemoveItemFromCraft(item.ItemsNeedForCraft[i]);
         }
         Inventory.instance.AddItem(item.FinalItem);
         CraftButton.interactable = false;
+        InfoManager.instance.ShowNotForCraftItem(item.FinalItem);
+        CheckForAnotherCraft();
+    }
+    void CheckForAnotherCraft()
+    {
+        int y = 0;
+        for (int i = 0; i < ContentOfIngridients.childCount; i++)
+        {
+            if (Inventory.instance.Items.Find(x=>x == ContentOfIngridients.GetChild(i).GetComponent<IngridienrCell>().Item))
+            {
+                ContentOfIngridients.GetChild(i).GetComponent<IngridienrCell>().SetColor(Color.green);
+                y++;
+            }
+            else
+            {
+                ContentOfIngridients.GetChild(i).GetComponent<IngridienrCell>().SetColor(Color.red);
+            }
+        }
+        if (y== item.ItemsNeedForCraft.Length)
+        {
+            CraftButton.interactable = true;
+        }
+        else
+        {
+            CraftButton.interactable = false;
+        }
     }
 
 

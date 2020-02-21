@@ -9,8 +9,10 @@ public class IngridienrCell : MonoBehaviour
     public TextMeshProUGUI Name;
     public Image Border;
     public Image Icon;
-    protected abstractItem Item;
-   public void DestroyCell()
+    private abstractItem item;
+    public abstractItem Item { get => item; set => item = value; }
+
+    public void DestroyCell()
     {
         Destroy(this.gameObject);
     }

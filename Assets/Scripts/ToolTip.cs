@@ -8,7 +8,7 @@ public class ToolTip : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     [TextArea()] [SerializeField] string des;
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //ToolTipManager.instance.SetPos(this.transform, des);
+       // ToolTipManager.instance.SetPos(this.transform, des);
     }
 
     public void OnPointerExit(PointerEventData eventData)

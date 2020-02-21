@@ -5,9 +5,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class QuipSlot : MonoBehaviour, IPointerClickHandler
+public class QuipSlot : MonoBehaviour, IPointerClickHandler,IPointerExitHandler,IPointerEnterHandler
 {
-    public TextMeshProUGUI Name;
+    
+    public TextMeshProUGUI Rarity;
     public TextMeshProUGUI Description;
     public TextMeshProUGUI Stats;
     public Image Boder;
@@ -42,28 +43,28 @@ public class QuipSlot : MonoBehaviour, IPointerClickHandler
         {
             ClearSlot();
         }
-        else if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            if (FastItemManager.instance.Item is Quipment)
-            {
-                Quipment qp = FastItemManager.instance.Item as Quipment;
-                if (qp.TypeOfItem.ToString() == TypeOfQuipSlot.ToString())
-                {
-                    AddQuip(FastItemManager.instance.Item as Quipment);
-                    _quipment.Use();
-                    FastItemManager.instance.Item = null;
-                    FastItemManager.instance.DisableBorder();
-                }
-            }
-            else if (FastItemManager.instance.Item is Weapon && TypeOfQuipSlot== TypeOfQuipSlot.Weapon)
-            {
-                AddQuip(FastItemManager.instance.Item as Weapon);
-                Weapon weapon = FastItemManager.instance.Item as Weapon;
-                weapon.Use();
-                FastItemManager.instance.Item = null;
-                FastItemManager.instance.DisableBorder();
-            }
-        }
+        //else if (eventData.button == PointerEventData.InputButton.Left)
+        //{
+        //    if (FastItemManager.instance.Item is Quipment)
+        //    {
+        //        Quipment qp = FastItemManager.instance.Item as Quipment;
+        //        if (qp.TypeOfItem.ToString() == TypeOfQuipSlot.ToString())
+        //        {
+        //            AddQuip(FastItemManager.instance.Item as Quipment);
+        //            _quipment.Use();
+        //            FastItemManager.instance.Item = null;
+        //            FastItemManager.instance.DisableBorder();
+        //        }
+        //    }
+        //    else if (FastItemManager.instance.Item is Weapon && TypeOfQuipSlot== TypeOfQuipSlot.Weapon)
+        //    {
+        //        AddQuip(FastItemManager.instance.Item as Weapon);
+        //        Weapon weapon = FastItemManager.instance.Item as Weapon;
+        //        weapon.Use();
+        //        FastItemManager.instance.Item = null;
+        //        FastItemManager.instance.DisableBorder();
+        //    }
+        //}
     }
     public void ClearSlot()
     {
@@ -87,27 +88,18 @@ public class QuipSlot : MonoBehaviour, IPointerClickHandler
     {
         if (_quipment)
         {
-            if (_quipment is Weapon)
-            {
-                Weapon weapon = _quipment as Weapon;
-                Stats.text = "Урон " + weapon.damageMod;
-            }
-            else if (_quipment is Quipment)
-            {
-                Quipment weapon = _quipment as Quipment;
-                Stats.text = "Броня " + weapon.defenceMof;
-            }
-            Name.text = _quipment.name;
-            Description.text = _quipment.Description;
+            Inventory.instance.ShowInfoAboutItem(_quipment);
         }
         
     }
-    public void ClearInfoPanel()
+
+    public void OnPointerExit(PointerEventData eventData)
     {
-        Name.text = null;
-        Description.text = null;
+        Inventory.instance.ClearInfoPanel();
     }
 
-
-
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        ShowInfoPanel();
+    }
 }

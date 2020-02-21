@@ -21,8 +21,9 @@ public class StatsSystem : MonoBehaviour
     [SerializeField] Text _MaxManaText;
      ExpSystem expSystem;
      Controller controller;
-    public int _FreeLvlPoints = 0;
-    
+    int _FreeLvlPoints = 0;
+
+
     public void SetupStats(int Strength, int Agility, int Int)
     {
         _Strength = Strength;
@@ -33,6 +34,7 @@ public class StatsSystem : MonoBehaviour
     private void ExpSystem_OnLvlUp(object sender, EventArgs e)
     {
         _FreeLvlPoints++;
+        _FreeLvlPointsText.text = _FreeLvlPoints.ToString();
     }
     public void IncreaseStrength()
     {

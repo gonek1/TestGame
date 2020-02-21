@@ -5,8 +5,9 @@ using UnityEngine.EventSystems;
 using TMPro;
 
 public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler, IDragHandler,*/
-    IPointerClickHandler
-{   
+    IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+{
+    public Image Border;
     public GameObject ItemPrefab;
     public int IndexSlot;
     public Transform playerPosToDrop;
@@ -38,12 +39,21 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
     {
         if (item)
         {
+            int index = transform.GetSiblingIndex();
             icon.sprite = null;
             icon.enabled = false;
-            
-            inventory.RemoveItem(item);
+            inventory.RemoveItemForTime(index);
             item = null;
             ClearInfoPanel();
+        }
+    }
+    public void ClearSlotNotFull()
+    {
+        if (item)
+        {
+            icon.sprite = null;
+            icon.enabled = false;
+            item = null;
         }
     }
     public void ClearSlotForOrder()
@@ -57,7 +67,7 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
         }
     }
 
-    private void SpawnItem()
+    private void DropItem()
     {
         var prebaf = Instantiate(ItemPrefab, playerPosToDrop.position, transform.rotation);
         prebaf.GetComponent<ItemPick>().Item = item;
@@ -69,7 +79,7 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
         {
             if (item !=null)
             {
-                SpawnItem();
+                DropItem();
                 ClearSlot();
             }
             
@@ -77,9 +87,15 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
         else if (eventData.button == PointerEventData.InputButton.Left)
         {
             if (item!=null)
-            {          
-               FastItemManager.instance.OutLineBorder(item);
-               ClearSlot();
+            {
+                if (item is Weapon || item is Quipment)
+                {
+                    item.Use();
+                    QuipManager.instance.QuipItem(item);
+                    ClearSlot();
+                    SetBorder(false);
+                    
+                }
                 //item.Use(IndexSlot); 
             }
             
@@ -101,5 +117,27 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
     public void Test()
     {
         Debug.Log("Test");
+    }
+    public void SetBorder(bool isOn)
+    {
+        Border.enabled = isOn;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        
+        if (item)
+        {
+            FastItemManager.instance.OutLineBorder(item);
+            ShowInfoPanel();
+            SetBorder(true);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        FastItemManager.instance.DisableBorder();
+        SetBorder(false);
+        ClearInfoPanel();
     }
 }

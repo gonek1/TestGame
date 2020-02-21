@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public enum TypeOfAction
 {
     Use,
@@ -23,6 +24,8 @@ public class InfoManager : MonoBehaviour
     public GameObject NotificationInfo;
     public Text ItemName;
     public Text NotificationText;
+    public TextMeshProUGUI itemText;
+    public GameObject ItemPanel;
     
     void Start()
     {
@@ -65,10 +68,21 @@ public class InfoManager : MonoBehaviour
     }
     IEnumerator Notification(GameObject gameObject)
     {
-        
         yield return new WaitForSeconds(2);
         Destroy(gameObject, 2);
-        
+    }
+    public void ShowNotForCraftItem(abstractItem item)
+    {
+        ItemPanel.SetActive(true);
+        itemText.text = "Вы получили : " + item.Name;
+        StartCoroutine(CloseCraftItemPanel());
+
+    }
+    IEnumerator CloseCraftItemPanel()
+    {
+        yield return new WaitForSeconds(1f);
+        ItemPanel.SetActive(false);
+        itemText.text = "";
     }
 
 

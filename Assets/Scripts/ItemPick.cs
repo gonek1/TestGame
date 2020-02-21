@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemPick : MonoBehaviour
 {
+    Actions Inputs;
     InfoManager infoManager;
     bool IsNear;
     public abstractItem Item;
@@ -13,11 +14,13 @@ public class ItemPick : MonoBehaviour
     }
     public  void PickUp()
     {
-        
-        bool waspicked = Inventory.instance.AddItem(Item);
-        if (waspicked)
-            infoManager.ShowNotification(Item);
+        if (IsNear)
+        {
+            bool waspicked = Inventory.instance.AddItem(Item);
+            if (waspicked)
+                infoManager.ShowNotification(Item);
             Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -35,15 +38,20 @@ public class ItemPick : MonoBehaviour
             IsNear = false;
         }
     }
-    void Update()
+    private void Awake()
     {
-        if (Input.GetKey(KeyCode.E) && IsNear)
-        {
-            
-            PickUp();
-
-        }
+        Inputs = new Actions();
+        Inputs.Items.TakeItem.performed += _ => PickUp();
     }
+    private void OnEnable()
+    {
+        Inputs.Items.Enable();
+    }
+    private void OnDisable()
+    {
+        Inputs.Items.Disable();
+    }
+
 
 
 }

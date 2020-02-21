@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Cost: 100
   type: 1
-  rarity: 3
+  rarity: 2
   Name: Sword of Destiny
   Description: "\u0411\u043B\u0430 \u0431\u043B\u0430 \u0431\u043B\u0430"
   Icon: {fileID: 21300000, guid: f594bf2df7f5c264f96b77d4c5537436, type: 3}

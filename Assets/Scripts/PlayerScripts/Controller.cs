@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 
 public class Controller : MonoBehaviour
 {
+    private Actions Inputs;
     [Header("Способности")]
     [SerializeField] List<Skill> SkillsInInventory = new List<Skill>();
     public Skill[] ActiveSkills = new Skill[3];
@@ -34,18 +36,19 @@ public class Controller : MonoBehaviour
     bool canOpenInv = true;
     bool canMove = true;
     bool canAttack = true;
-    private float HorInp;
-    private float VerInp;
+    private float horInp;
+    private float verInp;
     private bool jump = false;
     bool isOpen = false;
     [SerializeField] Rigidbody2D rb;
-    
     
     public bool canUseOther { get; set; }
     public float Speed { get => _speed; set => _speed = value; }
     public bool CanAttack { get => canAttack; set => canAttack = value; }
     public List<Transform> HomeFirePlaces { get => homeFirePlaces; set => homeFirePlaces = value; }
     public int IndexOfLastHomeFirePosiotion { get => indexOfLastHomeFirePosiotion; set => indexOfLastHomeFirePosiotion = value; }
+    public float HorInp { get => horInp; set => horInp = value; }
+    public float VerInp { get => verInp; set => verInp = value; }
 
     public HealthSystem system;
     ExpSystem expSystem;
@@ -53,8 +56,14 @@ public class Controller : MonoBehaviour
     public MoneySystem moneySystem;
     void OnEnable()
     {
+        Inputs.Player.Enable();
+        
         StopCoroutine(RegenStamina());
         StartCoroutine(RegenStamina());
+    }
+    private void OnDisable()
+    {
+        Inputs.Player.Disable();
     }
     void Start()
     {
@@ -113,7 +122,11 @@ public class Controller : MonoBehaviour
 
     void Awake()
     {
+        Inputs = new Actions();
         instance = this;
+        Inputs.Player.Jump.performed += _ => Jump();
+        Inputs.Player.Attack.performed += _ => Attack();
+        Inputs.Player.OpenInventory.performed += _ => OpenOrCloseInventory();
     }
     public void GiveDamagaToEnemy()
     {
@@ -150,10 +163,52 @@ public class Controller : MonoBehaviour
     }
     void Update()
     {
-        HorInp = Input.GetAxisRaw("Horizontal") * Speed * Time.fixedDeltaTime;
-        VerInp = Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime;
+        var value = Inputs.Player.Move.ReadValue<Vector2>();
+        // Debug.Log(value.y);
+        HorInp = value.x * Time.fixedDeltaTime * Speed;
+        VerInp = value.y * Time.fixedDeltaTime;
         TimeBegoreRegenStamina = Mathf.Clamp(TimeBegoreRegenStamina - Time.deltaTime, 0, TimeBegoreRegenStamina);
-        if (Input.GetKeyDown(KeyCode.Tab) && canOpenInv)
+        animator.SetFloat("speed", Mathf.Abs(HorInp));
+        animator.SetFloat("velocityY", rb.velocity.y);
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (Skills[0].GetComponent<SkillSlot>().SkillIn != null)
+            {
+
+                Skills[0].GetComponent<SkillSlot>().Use();
+            }
+            else
+            {
+                Debug.Log("Нет скила в ячейке!");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (Skills[1].GetComponent<SkillSlot>().SkillIn != null)
+                Skills[1].GetComponent<SkillSlot>().Use();
+            else
+            {
+                Debug.Log("Нет скила в ячейке!");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (Skills[2].GetComponent<SkillSlot>().SkillIn != null)
+                Skills[2].GetComponent<SkillSlot>().Use();
+            else
+            {
+                Debug.Log("Нет скила в ячейке!");
+            }
+        }
+    }
+
+    private void OpenOrCloseInventory()
+    {
+        if (canOpenInv)
         {
             isOpen = !isOpen;
             if (isOpen)
@@ -165,22 +220,11 @@ public class Controller : MonoBehaviour
                 Inventory.instance.CloseInventory();
             }
         }
-        animator.SetFloat("speed", Mathf.Abs(HorInp));
-        animator.SetFloat("velocityY", rb.velocity.y);
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canMove)
-        {
-            animator.SetTrigger("jump");
-            animator.SetBool("isGrounded", false);
-            jump = true;
-            if (isOnLadder)
-            {
-                StartCoroutine(IgnoreLadder());
-            }
-
-        }
-
-        if (Input.GetMouseButtonDown(0) && canMove && CanAttack)
+    private void Attack()
+    {
+        if (canMove && CanAttack)
         {
             if (system.GetStamina() > NeedStaminaToAttack)
             {
@@ -193,44 +237,27 @@ public class Controller : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+    }
+
+    private void Jump()
+    {
+        if (canMove)
         {
-            if (Skills[0].GetComponent<SkillSlot>().SkillIn != null)
+            animator.SetTrigger("jump");
+            animator.SetBool("isGrounded", false);
+            jump = true;
+            if (isOnLadder)
             {
-                
-                Skills[0].GetComponent<SkillSlot>().Use();
+                StartCoroutine(IgnoreLadder());
             }
-            else
-            {
-                Debug.Log("Нет скила в ячейке!");
-            }
-        }
-       
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            if (Skills[1].GetComponent<SkillSlot>().SkillIn != null)
-                Skills[1].GetComponent<SkillSlot>().Use();
-            else
-            {
-                Debug.Log("Нет скила в ячейке!");
-            }
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            if (Skills[2].GetComponent<SkillSlot>().SkillIn != null)
-                Skills[2].GetComponent<SkillSlot>().Use();
-            else
-            {
-                Debug.Log("Нет скила в ячейке!");
-            }
+
         }
     }
+
     void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("ladder") && Input.GetKey(KeyCode.Space))
+        if (col.gameObject.CompareTag("ladder") && Inputs.Player.Jump.ReadValue<float>()>0)
         {
-            
             isOnLadder = true;
             rb.bodyType = RigidbodyType2D.Kinematic;
         }

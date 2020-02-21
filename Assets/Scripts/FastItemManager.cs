@@ -5,15 +5,11 @@ using UnityEngine.UI;
 public class FastItemManager : MonoBehaviour
 {
     [SerializeField] QuipSlot[] Borders;
-    [SerializeField] GameObject ToolTip;
+    
     [SerializeField] Image Border;
     public static FastItemManager instance;
     [SerializeField] Transform[] FastItemsInInventory;
     [SerializeField] Transform[] FastItemsInGame;
-    abstractItem item;
-
-    public abstractItem Item { get => item; set => item = value; }
-
     void Awake()
     {
         instance = this;
@@ -84,24 +80,20 @@ public class FastItemManager : MonoBehaviour
         {
             Border.enabled = true;
         }
-        ToolTip.SetActive(true);
-        ToolTip.GetComponent<Image>().sprite = item.Icon;
-        this.Item = item;
+        //ToolTip.SetActive(true);
+        //ToolTip.GetComponent<Image>().sprite = item.Icon;
+        //this.Item = item;
     }
     public void DisableBorder()
     {
-        if (Item!=null)
-        {
-            Inventory.instance.AddItem(Item);
-        }
+        
         for (int i = 0; i < Borders.Length; i++)
         {
 
             Borders[i].TurnOffBorder();
             
         }
-        ToolTip.SetActive(false);
-        Item = null;
+        
         Border.enabled = false;
     }
 }
