@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
-
+[RequireComponent(typeof(Rigidbody2D))]
 public class Controller : MonoBehaviour
 {
     private Actions Inputs;
@@ -31,17 +32,34 @@ public class Controller : MonoBehaviour
     [Range(0, 2)] public float Radius;
     [SerializeField] Transform attackPlace;
     [SerializeField] Animator animator;
-    [SerializeField] CharacterController2D controller2D;
-    bool isOnLadder;
-    bool canOpenInv = true;
-    bool canMove = true;
-    bool canAttack = true;
+    [SerializeField] private float m_speedOnLadder = 10f;
+    [SerializeField] private float m_JumpForce = 400f;                          
+    [SerializeField] private float m_JumpForceOnLadder = 400f;
+    [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          
+    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  
+    [SerializeField] private bool m_AirControl = false;                         
+    [SerializeField] private LayerMask m_WhatIsGround;                          
+    [SerializeField] private Transform m_GroundCheck;                           
+    [SerializeField] private Transform m_CeilingCheck;                          
+    [SerializeField] private Collider2D m_CrouchDisableCollider;
+    [SerializeField] private bool m_Grounded;
+    private bool isOnLadder;
+    private bool canOpenInv = true;
+    private bool canMove = true;
+    private bool canAttack = true;
     private float horInp;
     private float verInp;
     private bool jump = false;
     bool isOpen = false;
-    [SerializeField] Rigidbody2D rb;
-    
+    const float k_GroundedRadius = .2f;
+    const float k_CeilingRadius = .2f;
+    private Rigidbody2D m_Rigidbody2D;
+    public bool m_FacingRight = true;
+    private Vector3 m_Velocity = Vector3.zero;
+    private int m_JumpCount = 2;
+    public class BoolEvent : UnityEvent<bool> { }
+    public BoolEvent OnCrouchEvent;
+    private bool m_wasCrouching = false;
     public bool canUseOther { get; set; }
     public float Speed { get => _speed; set => _speed = value; }
     public bool CanAttack { get => canAttack; set => canAttack = value; }
@@ -49,15 +67,17 @@ public class Controller : MonoBehaviour
     public int IndexOfLastHomeFirePosiotion { get => indexOfLastHomeFirePosiotion; set => indexOfLastHomeFirePosiotion = value; }
     public float HorInp { get => horInp; set => horInp = value; }
     public float VerInp { get => verInp; set => verInp = value; }
+    public bool CanOpenInv { get => canOpenInv; set => canOpenInv = value; }
 
     public HealthSystem system;
     ExpSystem expSystem;
     public PlayerEqupimentXar equpimentXar;
     public MoneySystem moneySystem;
+
+    #region Методы, которые пока не требуют доработок
     void OnEnable()
     {
         Inputs.Player.Enable();
-        
         StopCoroutine(RegenStamina());
         StartCoroutine(RegenStamina());
     }
@@ -73,37 +93,34 @@ public class Controller : MonoBehaviour
         system = new HealthSystem(150, 50, 100);
         system.TakeDamageEvent += TakeDamage;
         system.HealthDownToZero += System_HealthDownToZero;
-        controller2D = GetComponent<CharacterController2D>();
         healthDisplay.Setup(system);
         animator = GetComponent<Animator>();
         moneySystem = new MoneySystem(0, SoulsText);
     }
-
     private void System_HealthDownToZero(object sender, System.EventArgs e)
     {
         animator.SetTrigger("death");
         SetMove(false);
-        canOpenInv = false;
+        CanOpenInv = false;
         BoxCollider2D bc = GetComponent<BoxCollider2D>();
         bc.enabled = false;
-        rb.bodyType = RigidbodyType2D.Static;
+        m_Rigidbody2D.bodyType = RigidbodyType2D.Static;
 
     }
     public void Respawn()
     {
         BoxCollider2D bc = GetComponent<BoxCollider2D>();
         bc.enabled = true;
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         this.gameObject.SetActive(true);
         system.FullHeal();
         FindClosethesHomeFire();
         animator.SetTrigger("awake");
         SetMove(true);
-        canOpenInv = true;
+        CanOpenInv = true;
     }
     public void DestroyPlayer()
     {
-        
         GameOverPanel.SetActive(true);
         this.gameObject.SetActive(false);
 
@@ -113,27 +130,24 @@ public class Controller : MonoBehaviour
         GameOverPanel.SetActive(false);
         transform.position = HomeFirePlaces[IndexOfLastHomeFirePosiotion].position;
     }
-
     private void TakeDamage(object sender, System.EventArgs e)
     {
         Inventory.instance.CloseInventory();
         animator.SetTrigger("damage");
     }
-
     void Awake()
     {
+        m_Rigidbody2D = GetComponent<Rigidbody2D>();
         Inputs = new Actions();
         instance = this;
         Inputs.Player.Jump.performed += _ => Jump();
         Inputs.Player.Attack.performed += _ => Attack();
-        Inputs.Player.OpenInventory.performed += _ => OpenOrCloseInventory();
     }
     public void GiveDamagaToEnemy()
     {
         Collider2D[] enemys = Physics2D.OverlapCircleAll(new Vector2(attackPlace.position.x, attackPlace.position.y), Radius);
         foreach (var enemy in enemys)
         {
-
             if (enemy.gameObject.tag == "Enemy")
             {
                 int damage = equpimentXar.totalDamage;
@@ -145,7 +159,6 @@ public class Controller : MonoBehaviour
     }
     IEnumerator RegenStamina()
     {
-
         while (true)
         {
             yield return new WaitForSeconds(0.5f);
@@ -154,13 +167,12 @@ public class Controller : MonoBehaviour
                 system.PlusStamina(20);
             }
         }
-
-
     }
     public bool CanMove()
     {
         return canMove;
     }
+    #endregion
     void Update()
     {
         var value = Inputs.Player.Move.ReadValue<Vector2>();
@@ -169,59 +181,58 @@ public class Controller : MonoBehaviour
         VerInp = value.y * Time.fixedDeltaTime;
         TimeBegoreRegenStamina = Mathf.Clamp(TimeBegoreRegenStamina - Time.deltaTime, 0, TimeBegoreRegenStamina);
         animator.SetFloat("speed", Mathf.Abs(HorInp));
-        animator.SetFloat("velocityY", rb.velocity.y);
+        animator.SetFloat("velocityY", m_Rigidbody2D.velocity.y);
+        m_Grounded = false;
+        jump = false;
+        ChechGround();
+        Move(HorInp, jump, isOnLadder, VerInp);
+        
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    if (Skills[0].GetComponent<SkillSlot>().SkillIn != null)
+        //    {
 
+        //        Skills[0].GetComponent<SkillSlot>().Use();
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("Нет скила в ячейке!");
+        //    }
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    if (Skills[1].GetComponent<SkillSlot>().SkillIn != null)
+        //        Skills[1].GetComponent<SkillSlot>().Use();
+        //    else
+        //    {
+        //        Debug.Log("Нет скила в ячейке!");
+        //    }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            if (Skills[0].GetComponent<SkillSlot>().SkillIn != null)
-            {
-
-                Skills[0].GetComponent<SkillSlot>().Use();
-            }
-            else
-            {
-                Debug.Log("Нет скила в ячейке!");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            if (Skills[1].GetComponent<SkillSlot>().SkillIn != null)
-                Skills[1].GetComponent<SkillSlot>().Use();
-            else
-            {
-                Debug.Log("Нет скила в ячейке!");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            if (Skills[2].GetComponent<SkillSlot>().SkillIn != null)
-                Skills[2].GetComponent<SkillSlot>().Use();
-            else
-            {
-                Debug.Log("Нет скила в ячейке!");
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    if (Skills[2].GetComponent<SkillSlot>().SkillIn != null)
+        //        Skills[2].GetComponent<SkillSlot>().Use();
+        //    else
+        //    {
+        //        Debug.Log("Нет скила в ячейке!");
+        //    }
+        //}
     }
 
-    private void OpenOrCloseInventory()
+    private void ChechGround()
     {
-        if (canOpenInv)
+        RaycastHit2D hitGround = Physics2D.Raycast(m_GroundCheck.position, Vector2.down, k_GroundedRadius);
+        if (hitGround.collider != null && hitGround.transform.gameObject.tag == "Ground")
         {
-            isOpen = !isOpen;
-            if (isOpen)
-            {
-                Inventory.instance.OpenInventory(1);
-            }
-            else if (!isOpen)
-            {
-                Inventory.instance.CloseInventory();
-            }
+            m_Grounded = true;
+            m_JumpCount = 1;
+        }
+        else
+        {
+            m_Grounded = false;
         }
     }
-
     private void Attack()
     {
         if (canMove && CanAttack)
@@ -238,28 +249,31 @@ public class Controller : MonoBehaviour
 
         }
     }
-
     private void Jump()
     {
         if (canMove)
         {
-            animator.SetTrigger("jump");
-            animator.SetBool("isGrounded", false);
-            jump = true;
+            if (m_JumpCount>0)
+            {
+                animator.SetTrigger("jump");
+                animator.SetBool("isGrounded", false);
+                m_Rigidbody2D.velocity = Vector2.up *m_JumpForce;
+                m_JumpCount--;
+                jump = true;
+            }
             if (isOnLadder)
             {
                 StartCoroutine(IgnoreLadder());
             }
-
         }
+        //Debug.Log(m_JumpCount);
     }
-
     void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("ladder") && Inputs.Player.Jump.ReadValue<float>()>0)
         {
             isOnLadder = true;
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            m_Rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
         }
     }
     void OnTriggerExit2D(Collider2D col)
@@ -267,15 +281,15 @@ public class Controller : MonoBehaviour
         if (col.gameObject.CompareTag("ladder"))
         {
             isOnLadder = false;
-            rb.bodyType = RigidbodyType2D.Dynamic;
+            m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         }
     }
     void FixedUpdate()
     {
-        controller2D.Move(HorInp, false, jump,isOnLadder,VerInp);
-        jump = false;
+        
 
     }
+    #region Рабочий код
     public void HasLended()
     {
         animator.SetBool("isGrounded",true);
@@ -298,16 +312,14 @@ public class Controller : MonoBehaviour
     }
     public void SetOpenInv(bool inv)
     {
-        canOpenInv = inv;
+        CanOpenInv = inv;
     }
     
     IEnumerator IgnoreLadder()
-    {
-       
+    { 
         Physics2D.IgnoreLayerCollision(8, 12,true);
         yield return new  WaitForSeconds(0.3f);
-        Physics2D.IgnoreLayerCollision(8, 12, false);
-        
+        Physics2D.IgnoreLayerCollision(8, 12, false); 
     }
     public void AddSkillToInvenory(Skill skill)
     {
@@ -325,6 +337,38 @@ public class Controller : MonoBehaviour
     public List<Skill> ReturnSkills()
     {
         return SkillsInInventory;
+    }
+    #endregion 
+    public void Move(float move, bool jump, bool IsOnladder, float VerticalInput)
+    {
+        if (m_Grounded || m_AirControl && !IsOnladder)
+        {
+            Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+            m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+            if (move > 0 && !m_FacingRight)
+            {
+                Flip();
+            }
+            else if (move < 0 && m_FacingRight)
+            {
+                Flip();
+            }
+        }
+        if (IsOnladder)
+        {
+            Vector3 targetVelocity = new Vector2(0, VerticalInput * m_speedOnLadder);
+            m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+        }
+        if (IsOnladder && jump)
+        {
+            m_Rigidbody2D.velocity = new Vector2(move * m_JumpForceOnLadder * Time.deltaTime, 10);
+        }
+    }
+    private void Flip()
+    {
+        m_FacingRight = !m_FacingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 
 }

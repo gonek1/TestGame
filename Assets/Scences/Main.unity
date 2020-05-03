@@ -9106,10 +9106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fbc56e75effc547bdc8c7abd76d472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NextTab: {fileID: 1387176157}
-  _PrevTab: {fileID: 389634322}
-  _CurrTab: {fileID: 1456644545}
-  _Tabs:
+  _nextTab: {fileID: 1387176157}
+  _prevTab: {fileID: 389634322}
+  _currTab: {fileID: 1456644545}
+  _tabs:
   - {fileID: 135934682}
   - {fileID: 2106880543}
   - {fileID: 695620860}
@@ -13662,7 +13662,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 52bb7d8177d281a4cb328274438c393e, type: 2}
+  sharedProfile: {fileID: 0}
 --- !u!4 &779685394
 Transform:
   m_ObjectHideFlags: 0
@@ -30096,16 +30096,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1919035721}
   - component: {fileID: 1919035720}
-  - component: {fileID: 1919035719}
   - component: {fileID: 1919035718}
   - component: {fileID: 1919035723}
   - component: {fileID: 1919035722}
   - component: {fileID: 1919035725}
-  - component: {fileID: 1919035727}
   - component: {fileID: 1919035717}
   - component: {fileID: 1919035726}
   - component: {fileID: 1919035728}
   - component: {fileID: 1919035724}
+  - component: {fileID: 1919035719}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -30164,51 +30163,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 1919035716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8bc2e1e7adb6c449ec69eac72f5b7e, type: 3}
+  m_Script: {fileID: 11500000, guid: cae91528177df954ab2f1061223d4719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speedOnLadder: 100
-  m_JumpForce: 400
-  m_JumpForceOnLadder: 500
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 512
-  m_GroundCheck: {fileID: 361466776}
-  m_CeilingCheck: {fileID: 1110662321}
-  m_CrouchDisableCollider: {fileID: 0}
-  m_Grounded: 0
-  m_FacingRight: 1
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1919035723}
-        m_MethodName: Lended
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1919035716}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  tabControl: {fileID: 526908474}
+  itemsParent: {fileID: 599846791}
+  space: 36
+  items:
+  - {fileID: 11400000, guid: 11229ed398a86814083eb0c3573139a9, type: 2}
+  - {fileID: 11400000, guid: 6b095b5d21707104f93c948b2ff0f6d5, type: 2}
+  - {fileID: 11400000, guid: 11229ed398a86814083eb0c3573139a9, type: 2}
+  - {fileID: 11400000, guid: 6b095b5d21707104f93c948b2ff0f6d5, type: 2}
+  - {fileID: 11400000, guid: 213b0b639c656e24da1c17ce29016f5a, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inventoryItem: {fileID: 1789296410}
+  inventoryTabs:
+  - {fileID: 135934681}
+  - {fileID: 2106880542}
+  - {fileID: 695620859}
+  - {fileID: 982351730}
+  name: {fileID: 752240286}
+  description: {fileID: 1505846954}
+  stats: {fileID: 753115158}
+  rarityText: {fileID: 2082264070}
+  rarity: {fileID: 60834517}
+  backPack: {fileID: 2106880542}
 --- !u!212 &1919035720
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30333,8 +30342,20 @@ MonoBehaviour:
   Radius: 0.33
   attackPlace: {fileID: 339017984}
   animator: {fileID: 1919035725}
-  controller2D: {fileID: 1919035719}
-  rb: {fileID: 1919035722}
+  m_speedOnLadder: 200
+  m_JumpForce: 10
+  m_JumpForceOnLadder: 400
+  m_CrouchSpeed: 0.36
+  m_MovementSmoothing: 0.05
+  m_AirControl: 1
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  m_GroundCheck: {fileID: 361466776}
+  m_CeilingCheck: {fileID: 1110662321}
+  m_CrouchDisableCollider: {fileID: 0}
+  m_Grounded: 0
+  m_FacingRight: 1
 --- !u!114 &1919035724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30386,70 +30407,6 @@ MonoBehaviour:
   icon: {fileID: 1057826543}
   currentlvl: 0
   currentExp: 0
---- !u!114 &1919035727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919035716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae91528177df954ab2f1061223d4719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabControl: {fileID: 526908474}
-  itemsParent: {fileID: 599846791}
-  slots: []
-  space: 36
-  items:
-  - {fileID: 11400000, guid: 11229ed398a86814083eb0c3573139a9, type: 2}
-  - {fileID: 11400000, guid: 6b095b5d21707104f93c948b2ff0f6d5, type: 2}
-  - {fileID: 11400000, guid: 11229ed398a86814083eb0c3573139a9, type: 2}
-  - {fileID: 11400000, guid: 6b095b5d21707104f93c948b2ff0f6d5, type: 2}
-  - {fileID: 11400000, guid: 213b0b639c656e24da1c17ce29016f5a, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  inventoryItem: {fileID: 1789296410}
-  InventoryTabs:
-  - {fileID: 135934681}
-  - {fileID: 2106880542}
-  - {fileID: 695620859}
-  - {fileID: 982351730}
-  Name: {fileID: 752240286}
-  Description: {fileID: 1505846954}
-  Stats: {fileID: 753115158}
-  RarityText: {fileID: 2082264070}
-  Rarity: {fileID: 60834517}
 --- !u!114 &1919035728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33739,13 +33696,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2106880543}
+  - component: {fileID: 2106880544}
   m_Layer: 5
   m_Name: "\u0420\u044E\u043A\u0437\u0430\u043A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2106880543
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33772,6 +33730,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2106880544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106880542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c552bc43d4107438d8b32ddc877b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2109761593
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    
     [SerializeField] TabControlManager tabControl;
     #region Singlton
     public static Inventory instance;
     void Awake()
     {
+       // Debug.Log("Hello");
         if (instance != null)
         {
             Debug.LogWarning("Что то не то!!!");
@@ -20,43 +20,81 @@ public class Inventory : MonoBehaviour
         }
         instance = this;
         Inputs = new Actions();
-        Inputs.Player.SwapCell.performed += SwapCell;
+        Inputs.Player.SwapCell.performed +=_=>OutLineCell();
+        Inputs.Player.OpenInventory.performed += _ => OpenOrCloseInventory();
     }
-
-    private void SwapCell(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    public void OutLineCell(int index)
     {
-        throw new System.NotImplementedException();
+        slots[index].ShowallInfoInCell();
+    }
+    
+    public void OutLineCell()
+    {
+        if (IsBackPackOpen())
+        {
+            var value = Inputs.Player.SwapCell.ReadValue<Vector2>();
+            slots[currentCell].CloseCell();
+            if (value.x != 0)
+            {
+                if (currentCell + (int)value.x >= slots.Length)
+                {
+                    currentCell = 0;
+                }
+                else if (currentCell + (int)value.x < 0)
+                {
+                    currentCell = slots.Length - 1;
+                }
+                else
+                {
+                    currentCell += (int)value.x;
+                }
+            }
+            else if (value.y != 0)
+            {
+                currentCell = value.y > 0 ? currentCell += -6 : currentCell += 6;
+                if (currentCell > slots.Length - 1)
+                {
+                    currentCell = currentCell + -slots.Length;
+                }
+                else if (currentCell < 0)
+                {
+                    currentCell = currentCell + slots.Length;
+                }
+            }
+            slots[currentCell].ShowallInfoInCell();
+        }
     }
     #endregion
+    private int currentCell = 0;
     [SerializeField] Transform itemsParent;
-    public InventorySlot[] slots;
-    public delegate void OnItemChanged();
-    public OnItemChanged onItemChangedCallBack;
+    private InventorySlot[] slots;
     [SerializeField] int space = 20;
     [SerializeField] List<abstractItem> items = new List<abstractItem>();
     [SerializeField] GameObject inventoryItem;
-    [SerializeField] GameObject[] InventoryTabs;
-    [SerializeField] TextMeshProUGUI Name;
-    [SerializeField] TextMeshProUGUI Description;
-    [SerializeField] TextMeshProUGUI Stats;
-    [SerializeField] TextMeshProUGUI RarityText;
-    [SerializeField] Image Rarity;
-    Actions Inputs;
-    
+    [SerializeField] GameObject[] inventoryTabs;
+    [SerializeField] TextMeshProUGUI name;
+    [SerializeField] TextMeshProUGUI description;
+    [SerializeField] TextMeshProUGUI stats;
+    [SerializeField] TextMeshProUGUI rarityText;
+    [SerializeField] Image rarity;
+    [SerializeField] GameObject backPack;
+    private Actions Inputs;
+    private bool isOpen = false;
     public List<abstractItem> Items { get => items; set => items = value; }
+    public bool IsOpen { get => isOpen; set => isOpen = value; }
 
     private void Start()
     {
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         ShowAllItems();
     }
-    public bool IsOpen()
+
+    public bool IsBackPackOpen()
     {
-        return inventoryItem.activeSelf;
+        return backPack.activeSelf;
     }
     public bool AddItem(abstractItem item)
     {
-
         int busySlotsCount = 0;
         int freeSlotIndex = 0;
         for (int i = 0; i < Items.Count; i++)
@@ -133,7 +171,8 @@ public class Inventory : MonoBehaviour
     }
     public void OnDisable()
     {
-        Inputs.Player.SwapCell.Disable();
+       
+
     }
 
     public void ShowAllItems()
@@ -184,18 +223,20 @@ public class Inventory : MonoBehaviour
     //}
     public void OpenInventory(int index)
     {
-        for (int i = 0; i < InventoryTabs.Length; i++)
+        for (int i = 0; i < inventoryTabs.Length; i++)
         {
             if (i == index)
             {
-                InventoryTabs[i].SetActive(true);
+                inventoryTabs[i].SetActive(true);
             }
             else
             {
-                InventoryTabs[i].SetActive(false);
+                inventoryTabs[i].SetActive(false);
             }
         }
         ShowAllItems();
+        currentCell = 0;
+        OutLineCell(0);
         Controller.instance.canUseOther = false;
         tabControl.UpDateTabname(index);
         inventoryItem.SetActive(true);
@@ -205,6 +246,8 @@ public class Inventory : MonoBehaviour
     }
     public void CloseInventory()
     {
+        slots[currentCell].CloseCell();
+        currentCell = 0;
         Controller.instance.canUseOther = true;
         inventoryItem.SetActive(false);
         Controller.instance.SetMove(true);
@@ -257,11 +300,11 @@ public class Inventory : MonoBehaviour
 
             description += "Урон : " + "<color=" + colorText + ">" + x + "</color>";
         }
-        RarityText.text = item.rarity.ToString();
-        Rarity.color = ReturnRarirtColor(item);
-        Stats.text = description;
-        Name.text = item.Name;
-        Description.text = item.Description;
+        rarityText.text = item.rarity.ToString();
+        rarity.color = ReturnRarirtColor(item);
+        stats.text = description;
+        name.text = item.Name;
+        this.description.text = item.Description;
     }
 
     private Color ReturnRarirtColor(abstractItem item)
@@ -292,11 +335,11 @@ public class Inventory : MonoBehaviour
 
     public void ClearInfoPanel()
     {
-        Stats.text = null;
-        Name.text = null;
-        Description.text = null;
-        RarityText.text = null;
-        Rarity.color = Color.white;
+        stats.text = null;
+        name.text = null;
+        description.text = null;
+        rarityText.text = null;
+        rarity.color = Color.white;
         
     }
     public void ShowInfoAboutItem(abstractItem item)
@@ -304,19 +347,36 @@ public class Inventory : MonoBehaviour
         if (item is Weapon)
         {
             Weapon weapon = item as Weapon;
-            Stats.text = "Урон " + weapon.damageMod;
+            stats.text = "Урон " + weapon.damageMod;
         }
         else if (item is Quipment)
         {
             Quipment weapon = item as Quipment;
-            Stats.text = "Броня " + weapon.defenceMof;
+            stats.text = "Броня " + weapon.defenceMof;
         }
-        RarityText.text = item.rarity.ToString();
-        Name.text = item.name;
-        Description.text = item.Description;
-        Rarity.color = ReturnRarirtColor(item);
+        rarityText.text = item.rarity.ToString();
+        name.text = item.name;
+        description.text = item.Description;
+        rarity.color = ReturnRarirtColor(item);
     }
-    
+    private void OpenOrCloseInventory()
+    {
+        Debug.Log("Test123");
+        bool canOpen = Controller.instance.CanOpenInv;
+        if (canOpen)
+        {
+            IsOpen = !IsOpen;
+            if (IsOpen)
+            {
+                OpenInventory(1);
+            }
+            else if (!IsOpen)
+            {
+                CloseInventory();
+            }
+        }
+    }
+
 }
 public enum TypeOfQuipSlot
 {

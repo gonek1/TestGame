@@ -285,6 +285,52 @@ public class @Actions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""TabContorolManager"",
+            ""id"": ""dd7525ef-786b-4a03-9248-e01762b90048"",
+            ""actions"": [
+                {
+                    ""name"": ""SwipeRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""d47d636e-4e4c-49a8-a9f9-721210e0b217"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwipeLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""5f74207b-049c-451b-9deb-8bf7e927c98f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""69a618e2-ac00-472a-bc1f-53f4392d71f8"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwipeRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68dc142e-fe33-4cb9-b939-a0f2393df3aa"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwipeLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -305,6 +351,10 @@ public class @Actions : IInputActionCollection, IDisposable
         // Items
         m_Items = asset.FindActionMap("Items", throwIfNotFound: true);
         m_Items_TakeItem = m_Items.FindAction("TakeItem", throwIfNotFound: true);
+        // TabContorolManager
+        m_TabContorolManager = asset.FindActionMap("TabContorolManager", throwIfNotFound: true);
+        m_TabContorolManager_SwipeRight = m_TabContorolManager.FindAction("SwipeRight", throwIfNotFound: true);
+        m_TabContorolManager_SwipeLeft = m_TabContorolManager.FindAction("SwipeLeft", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -514,6 +564,47 @@ public class @Actions : IInputActionCollection, IDisposable
         }
     }
     public ItemsActions @Items => new ItemsActions(this);
+
+    // TabContorolManager
+    private readonly InputActionMap m_TabContorolManager;
+    private ITabContorolManagerActions m_TabContorolManagerActionsCallbackInterface;
+    private readonly InputAction m_TabContorolManager_SwipeRight;
+    private readonly InputAction m_TabContorolManager_SwipeLeft;
+    public struct TabContorolManagerActions
+    {
+        private @Actions m_Wrapper;
+        public TabContorolManagerActions(@Actions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SwipeRight => m_Wrapper.m_TabContorolManager_SwipeRight;
+        public InputAction @SwipeLeft => m_Wrapper.m_TabContorolManager_SwipeLeft;
+        public InputActionMap Get() { return m_Wrapper.m_TabContorolManager; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TabContorolManagerActions set) { return set.Get(); }
+        public void SetCallbacks(ITabContorolManagerActions instance)
+        {
+            if (m_Wrapper.m_TabContorolManagerActionsCallbackInterface != null)
+            {
+                @SwipeRight.started -= m_Wrapper.m_TabContorolManagerActionsCallbackInterface.OnSwipeRight;
+                @SwipeRight.performed -= m_Wrapper.m_TabContorolManagerActionsCallbackInterface.OnSwipeRight;
+                @SwipeRight.canceled -= m_Wrapper.m_TabContorolManagerActionsCallbackInterface.OnSwipeRight;
+                @SwipeLeft.started -= m_Wrapper.m_TabContorolManagerActionsCallbackInterface.OnSwipeLeft;
+                @SwipeLeft.performed -= m_Wrapper.m_TabContorolManagerActionsCallbackInterface.OnSwipeLeft;
+                @SwipeLeft.canceled -= m_Wrapper.m_TabContorolManagerActionsCallbackInterface.OnSwipeLeft;
+            }
+            m_Wrapper.m_TabContorolManagerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @SwipeRight.started += instance.OnSwipeRight;
+                @SwipeRight.performed += instance.OnSwipeRight;
+                @SwipeRight.canceled += instance.OnSwipeRight;
+                @SwipeLeft.started += instance.OnSwipeLeft;
+                @SwipeLeft.performed += instance.OnSwipeLeft;
+                @SwipeLeft.canceled += instance.OnSwipeLeft;
+            }
+        }
+    }
+    public TabContorolManagerActions @TabContorolManager => new TabContorolManagerActions(this);
     public interface IPlayerActions
     {
         void OnJump(InputAction.CallbackContext context);
@@ -533,5 +624,10 @@ public class @Actions : IInputActionCollection, IDisposable
     public interface IItemsActions
     {
         void OnTakeItem(InputAction.CallbackContext context);
+    }
+    public interface ITabContorolManagerActions
+    {
+        void OnSwipeRight(InputAction.CallbackContext context);
+        void OnSwipeLeft(InputAction.CallbackContext context);
     }
 }

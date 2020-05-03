@@ -20,13 +20,13 @@ public class FastItemManager : MonoBehaviour
     }
     void Update()
     {
-        if (Inventory.instance.IsOpen())
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                DisableBorder();
-            }
-        }
+        //if (Inventory.instance.IsOpen())
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Escape))
+        //    {
+        //        DisableBorder();
+        //    }
+        //}
     }
     public void RenderIcons()
     {

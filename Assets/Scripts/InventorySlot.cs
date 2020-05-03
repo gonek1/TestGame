@@ -125,16 +125,26 @@ public class InventorySlot : MonoBehaviour, /*IBeginDragHandler, IEndDragHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        ShowallInfoInCell();
+    }
+
+    public void ShowallInfoInCell()
+    {
         if (item)
         {
             FastItemManager.instance.OutLineBorder(item);
             ShowInfoPanel();
-            SetBorder(true);
+            
         }
+        SetBorder(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        CloseCell();
+    }
+
+    public void CloseCell()
     {
         FastItemManager.instance.DisableBorder();
         SetBorder(false);

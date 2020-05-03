@@ -272,6 +272,52 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "TabContorolManager",
+            "id": "dd7525ef-786b-4a03-9248-e01762b90048",
+            "actions": [
+                {
+                    "name": "SwipeRight",
+                    "type": "Button",
+                    "id": "d47d636e-4e4c-49a8-a9f9-721210e0b217",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwipeLeft",
+                    "type": "Button",
+                    "id": "5f74207b-049c-451b-9deb-8bf7e927c98f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "69a618e2-ac00-472a-bc1f-53f4392d71f8",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwipeRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68dc142e-fe33-4cb9-b939-a0f2393df3aa",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwipeLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

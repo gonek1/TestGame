@@ -6,104 +6,128 @@ using UnityEngine.UI;
 public class TabControlManager : MonoBehaviour
 { 
     int max, min;
-    [SerializeField] Text _NextTab;
-    [SerializeField] Text _PrevTab;
-    [SerializeField] Text _CurrTab;
-    [SerializeField] Transform[] _Tabs;
+    [SerializeField] Text _nextTab;
+    [SerializeField] Text _prevTab;
+    [SerializeField] Text _currTab;
+    [SerializeField] Transform[] _tabs;
+    private Actions inputs;
     int currentTab = 1;
     void Start()
     {
-        _Tabs[1].gameObject.SetActive(true);
+        //Debug.Log(gameObject.name);
+        _tabs[1].gameObject.SetActive(true);
         min = 0;
-        max = _Tabs.Length - 1;
-        _NextTab.text = _Tabs[currentTab + 1].gameObject.name.ToString();
-        _PrevTab.text = _Tabs[_Tabs.Length-1].gameObject.name.ToString();
-        _CurrTab.text = _Tabs[currentTab].gameObject.name.ToString();
+        max = _tabs.Length - 1;
+        _nextTab.text = _tabs[currentTab + 1].gameObject.name.ToString();
+        _prevTab.text = _tabs[_tabs.Length-1].gameObject.name.ToString();
+        _currTab.text = _tabs[currentTab].gameObject.name.ToString();
+       
+    }
+    private void Awake()
+    {
+        inputs = new Actions();
+        inputs.TabContorolManager.SwipeLeft.performed += _ => PreviousTab();
+        inputs.TabContorolManager.SwipeRight.performed += _ => NextTab();
+    }
+    private void OnDisable()
+    {
+        inputs.TabContorolManager.Disable();
+
+    }
+    private void OnEnable()
+    {
+        inputs.TabContorolManager.Enable();
     }
     public void UpDateTabname(int index)
     {
         currentTab = index;
         if (currentTab == min)
         {
-            _NextTab.text = _Tabs[currentTab + 1].gameObject.name.ToString();
-            _PrevTab.text = _Tabs[_Tabs.Length - 1].gameObject.name.ToString();
+            _nextTab.text = _tabs[currentTab + 1].gameObject.name.ToString();
+            _prevTab.text = _tabs[_tabs.Length - 1].gameObject.name.ToString();
         }
         else
         {
             if (currentTab == max)
             {
-                _NextTab.text = _Tabs[0].gameObject.name.ToString();
-                _PrevTab.text = _Tabs[currentTab - 1].gameObject.name.ToString();
+                _nextTab.text = _tabs[0].gameObject.name.ToString();
+                _prevTab.text = _tabs[currentTab - 1].gameObject.name.ToString();
             }
             else
             {
-                _NextTab.text = _Tabs[currentTab + 1].gameObject.name.ToString();
-                _PrevTab.text = _Tabs[currentTab - 1].gameObject.name.ToString();
+                _nextTab.text = _tabs[currentTab + 1].gameObject.name.ToString();
+                _prevTab.text = _tabs[currentTab - 1].gameObject.name.ToString();
             }
 
         }
-        _CurrTab.text = _Tabs[currentTab].gameObject.name.ToString();
+        _currTab.text = _tabs[currentTab].gameObject.name.ToString();
     }
     public void NextTab()
     {
-        _Tabs[currentTab].gameObject.SetActive(false);
-        currentTab++;
-        if (currentTab > max)
+        if (Inventory.instance.IsOpen)
         {
-            currentTab = min;
-        }
-        _Tabs[currentTab].gameObject.SetActive(true);
-        if (currentTab == min)
-        {
-            _NextTab.text = _Tabs[currentTab+1].gameObject.name.ToString();
-            _PrevTab.text = _Tabs[_Tabs.Length-1].gameObject.name.ToString();
-        }
-        else
-        {
-            if (currentTab==max)
+            _tabs[currentTab].gameObject.SetActive(false);
+            currentTab++;
+            if (currentTab > max)
             {
-                _NextTab.text = _Tabs[0].gameObject.name.ToString();
-                _PrevTab.text = _Tabs[currentTab - 1].gameObject.name.ToString();
+                currentTab = min;
+            }
+            _tabs[currentTab].gameObject.SetActive(true);
+            if (currentTab == min)
+            {
+                _nextTab.text = _tabs[currentTab + 1].gameObject.name.ToString();
+                _prevTab.text = _tabs[_tabs.Length - 1].gameObject.name.ToString();
             }
             else
             {
-                _NextTab.text = _Tabs[currentTab + 1].gameObject.name.ToString();
-                _PrevTab.text = _Tabs[currentTab - 1].gameObject.name.ToString();
+                if (currentTab == max)
+                {
+                    _nextTab.text = _tabs[0].gameObject.name.ToString();
+                    _prevTab.text = _tabs[currentTab - 1].gameObject.name.ToString();
+                }
+                else
+                {
+                    _nextTab.text = _tabs[currentTab + 1].gameObject.name.ToString();
+                    _prevTab.text = _tabs[currentTab - 1].gameObject.name.ToString();
+                }
+
             }
-            
+            _currTab.text = _tabs[currentTab].gameObject.name.ToString();
+            FastItemManager.instance.DisableBorder();
         }
-        _CurrTab.text = _Tabs[currentTab].gameObject.name.ToString();
-        FastItemManager.instance.DisableBorder();
     }
     public void PreviousTab()
     {
-        _Tabs[currentTab].gameObject.SetActive(false);
-        currentTab--;
-        if (currentTab<min)
+        if (Inventory.instance.IsOpen)
         {
-            currentTab = max;
-        }
-        _Tabs[currentTab].gameObject.SetActive(true);
-        if (currentTab == max)
-        {
-            _NextTab.text = _Tabs[0].gameObject.name.ToString();
-            _PrevTab.text = _Tabs[currentTab - 1].gameObject.name.ToString();
-        }
-        else
-        {
-            if (currentTab == min)
+            _tabs[currentTab].gameObject.SetActive(false);
+            currentTab--;
+            if (currentTab < min)
             {
-                _PrevTab.text = _Tabs[max].gameObject.name.ToString();
-                _NextTab.text = _Tabs[currentTab + 1].gameObject.name.ToString();
+                currentTab = max;
+            }
+            _tabs[currentTab].gameObject.SetActive(true);
+            if (currentTab == max)
+            {
+                _nextTab.text = _tabs[0].gameObject.name.ToString();
+                _prevTab.text = _tabs[currentTab - 1].gameObject.name.ToString();
             }
             else
             {
-                _PrevTab.text = _Tabs[currentTab - 1].gameObject.name.ToString();
-                _NextTab.text = _Tabs[currentTab + 1].gameObject.name.ToString();
+                if (currentTab == min)
+                {
+                    _prevTab.text = _tabs[max].gameObject.name.ToString();
+                    _nextTab.text = _tabs[currentTab + 1].gameObject.name.ToString();
+                }
+                else
+                {
+                    _prevTab.text = _tabs[currentTab - 1].gameObject.name.ToString();
+                    _nextTab.text = _tabs[currentTab + 1].gameObject.name.ToString();
+                }
+
             }
-           
+            _currTab.text = _tabs[currentTab].gameObject.name.ToString();
+            FastItemManager.instance.DisableBorder();
         }
-        _CurrTab.text = _Tabs[currentTab].gameObject.name.ToString();
-        FastItemManager.instance.DisableBorder();
     }
 }
